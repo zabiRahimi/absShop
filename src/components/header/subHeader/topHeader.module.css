@@ -1,0 +1,133 @@
+:root {
+    --font_size_icon1: clamp(18px, 5vw, 22px);
+    --font_size_icon2: clamp(22px, 1.8vw, 28px);
+}
+
+
+
+.container_header_logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(4px, 1vw, 15px);
+    column-gap: clamp(8px, 1.5vw, 35px);
+}
+
+
+
+.logo {
+    margin-right: clamp(1px, 2vw, 200px);
+    font-size: var(--font_size_icon1);
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+.about_us,
+.contact_us {
+    color: #000;
+    font-size: var(--font_size_icon1);
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .logo,
+    .about_us,
+    .contact_us,
+    .sing {
+        font-size: var(--font_size_icon2);
+    }
+
+}
+
+
+
+.sing {
+    color: #000;
+    font-size: var(--font_size_icon1);
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+
+
+.hover_icon:hover {
+    color: #747474;
+}
+
+
+
+
+
+
+
+/* :root{
+    --font_size_icon1:clamp(18px, 5vw, 22px);
+    --font_size_icon2:clamp(22px, 1.8vw, 28px);
+}
+.container_header_logo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(4px , 1vw , 15px);
+}
+
+.container_left{
+    width: min-content;
+    background-color:#d1cece;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(8px , 3.3vw , 20px);
+}
+
+.logo{
+    font-size: var(--font_size_icon1);
+    color: #000;
+    font-weight: bold;
+    background-color: antiquewhite;
+    
+}
+
+.container_site_info{
+    width: min-content;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(6px , 2% , 20px);
+    background-color: aliceblue;
+}
+
+.about_us, .contact_us{
+    color: #000;
+    font-size: var(--font_size_icon1);
+   
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1200px){
+    .logo,
+    .about_us,
+    .contact_us,
+    .sing {
+        font-size: var(--font_size_icon2);
+    }
+}
+
+.sing{
+    color: #000;
+    font-size: var(--font_size_icon1);
+    
+    cursor: pointer;
+    background-color: #b6b4b4;
+}
+
+.icofont-info-circle:hover, .icofont-phone-circle:hover, .icofont-ui-user:hover, .icofont-login:hover{
+    color: #ccc;
+}  */
