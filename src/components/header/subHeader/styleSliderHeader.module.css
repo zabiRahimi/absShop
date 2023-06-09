@@ -1,0 +1,99 @@
+.container {
+    max-inline-size: 100%;
+    padding: 0 5px;
+}
+
+
+
+.img {
+
+    width: 100%;
+
+    block-size: auto;
+}
+
+
+
+/* @media screen and (min-width:370px) {
+
+    .img {
+
+        height: 115px;
+    }
+
+}
+
+
+
+@media screen and (min-width:500px) {
+
+    .img {
+
+        height: 170px;
+    }
+
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .img {
+
+        height: 200px;
+    }
+
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .img {
+        
+        height: 270px;
+    }
+
+} */
+
+
+
+.slick_thumb {
+
+    bottom: 5px !important;
+}
+
+
+
+.slick_thumb_a {
+
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    border: 2px solid #c4c4c4;
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    .slick_thumb_a {
+
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+        display: inline-block;
+        border: 2px solid #9c9c9c;
+    }
+
+}
+
+
+
+.HFactive {
+
+    background-color: rgb(151, 148, 116);
+}
