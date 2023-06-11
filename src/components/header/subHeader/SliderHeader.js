@@ -4,8 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styleSliderHeader from './styleSliderHeader.module.css';
 
-// import './slick.css';
-
 import s1 from "../../../assets/images/sliders/s1.jpg";
 import m1 from "../../../assets/images/sliders/m1.jpg";
 import l1 from "../../../assets/images/sliders/l1.jpg";
@@ -29,10 +27,11 @@ import xl4 from "../../../assets/images/sliders/xl4.jpg";
 
 
 const SliderHeader = () => {
+
     const [currentSlide, setCurrentSlide] = useState(0);
+
     const settings = {
         dots: true,
-        // className: styleSliderHeader.slider_header_fatak,
         arrows: false,
         autoplay: true,
         fade: true,
@@ -44,71 +43,95 @@ const SliderHeader = () => {
         afterChange: (current) => {
             setCurrentSlide(current);
         },
+
         pauseOnFocus: true,
+        customPaging: i => {
+            return (
+                <button
+                    className={`${styleSliderHeader.slick_dots_header_slider} ${currentSlide === i ? styleSliderHeader.slick_active : ''}`}
+                />
+            )
+        },
+        dotsClass: `slick-dots ${styleSliderHeader.slick_dots_header_slider}`,
 
-        // appendDots: dots => (
-        //     <div className={styleSliderHeader.appendDots_div} >
-        //         <ul className={styleSliderHeader.appendDots_div_ul} >{dots}</ul>
-        //     </div>
-        // ),
-        // appendDots: dots => (
-        //     <div className={styleSliderHeader.divAppendDots} style={{ position: 'absolute', left: 0, right: 0, bottom: '5px ' }}>
-        //         <ul style={{ margin: 0, padding: 0 }}>{dots}</ul>
-        //     </div>
-        // ),
-
-        // // customPaging: function(index) {
-        //     return (
-        //     //   <a>
-        //     //     <img src={process.env.PUBLIC_URL + `/images/flower${i + 1}.jpg`}  alt={`flower${i + 1}`} style={{width: '20px' , height: '20px'}} />
-        //     //   </a>
-        //     // <a href="#" className={`${styleSliderHeader.slick_thumb_a} ${currentSlide === index ? styleSliderHeader.HFactive : ''}`}></a>
-        //     //  <a  className={`${styleSliderHeader.slick_thumb_a} ${currentSlide === index ? styleSliderHeader.HFactive : ''}`}></a>
-        //     // <button className={`${styleSliderHeader.slick_thumb_a} ${currentSlide === index ? styleSliderHeader.HFactive : ''}`}></button>
-        //     // );
-        //   },
-        customPaging: i => {return (
-            <button
-                className={`${styleSliderHeader.slick_dots_header_slider} ${currentSlide === i ? styleSliderHeader.slick_active : ''}`}
-        />
-            )},
-dotsClass: `slick-dots ${styleSliderHeader.slick_dots_header_slider}`,
-        //   dotsClass:`slick-dots ${styleSliderHeader.slick_thumb}`,
-        
-
-        
     }
 
-return (
-    // <div className="containerMain">
 
 
-    <div className={styleSliderHeader.container}>
+    return (
 
-        <Slider {...settings} >
-            <div>
-                <img src={s1} srcSet={`${s1} 768w,${m1} 1024w, ${l1} 2500w , ${xl1} 2501w`} alt="car1" className={styleSliderHeader.img} />
-            </div>
+        <div className={styleSliderHeader.container}>
 
-            <div>
-                <img src={s2} srcSet={`${s2} 768w,${m2} 1024w, ${l2} 2500w , ${xl2} 2501w`} alt="car2" className={styleSliderHeader.img} />
-            </div>
+            <Slider {...settings} >
+                <div>
 
-            <div>
-                <img src={s3} srcSet={`${s3} 768w,${m3} 1024w, ${l3} 2500w , ${xl3} 2501w`} alt="car3" className={styleSliderHeader.img} />
-            </div>
+                    <img
+                        src={s1}
+                        srcSet={`
+                            ${s1} 768w,
+                            ${m1} 1024w,
+                            ${l1} 2500w ,
+                            ${xl1} 2501w
+                        `}
+                        alt="car1" className={styleSliderHeader.img}
+                    />
 
-            <div>
-                <img src={s4} srcSet={`${s4} 768w,${m4} 1024w, ${l4} 2500w , ${xl4} 2501w`} alt="car4" className={styleSliderHeader.img} />
-            </div>
+                </div>
 
+                <div>
 
+                    <img
+                        src={s2}
+                        srcSet={`
+                            ${s2} 768w,
+                            ${m2} 1024w, 
+                            ${l2} 2500w , 
+                            ${xl2} 2501w
+                        `}
+                        alt="car2"
+                        className={styleSliderHeader.img}
+                    />
 
-        </Slider>
-    </div>
+                </div>
 
-    // </div>
-)
+                <div>
+
+                    <img
+                        src={s3}
+                        srcSet={`
+                            ${s3} 768w,
+                            ${m3} 1024w, 
+                            ${l3} 2500w, 
+                            ${xl3} 2501w
+                        `}
+                        alt="car3"
+                        className={styleSliderHeader.img}
+                    />
+
+                </div>
+
+                <div>
+
+                    <img
+                        src={s4}
+                        srcSet={`
+                            ${s4} 768w,
+                            ${m4} 1024w, 
+                            ${l4} 2500w, 
+                            ${xl4} 2501w
+                        `}
+                        alt="car4"
+                        className={styleSliderHeader.img}
+                    />
+
+                </div>
+
+            </Slider>
+
+        </div>
+
+    )
+
 }
 
 export default SliderHeader;
