@@ -483,13 +483,26 @@ const SliderMe = ({ className, slides, typeClass, title, symbol }) => {
 
                         </div>
 
-                        <h2 className={`name_${typeClass}_me`} >{slide.name}</h2>
+                        <h3 className={`name_${typeClass}_me`} >{slide.name}</h3>
 
-                        <span className={`shop_${typeClass}_me`} >Shop: {slide.shop}</span>
+                        {/* <div className={`shop_${typeClass}_me`} >
+                            <div className={`shop_shop_${typeClass}_me`}>فروشگاه :</div>
+                            <div className={`shop_name_${typeClass}_me`}>{slide.shop}</div>
+                        </div> */}
 
-                        <span className={`price_${typeClass}_me`} >Price: {slide.price}</span>
+                        <div className={`price_${typeClass}_me`} >
+                            <div className={`price_toman_${typeClass}_me`}>تومان</div>
+                            <div className={`price_number_${typeClass}_me`}>{slide.price}</div>
+                            <div className={`price_percent_${typeClass}_me`}>{slide.oldPrice?`${Math.floor(((slide.oldPrice - slide.price)/slide.oldPrice) * 100 )}%` : ''}
+                            </div>
+                        </div>
 
-                        <span className={`oldPrice_${typeClass}_me`} >Old Price: {slide.oldPrice}</span>
+                        <div className={`oldPrice_${typeClass}_me`} >
+                            <div className={`oldPrice_div1_${typeClass}_me`}></div>
+                            <div className={`oldPrice_price_${typeClass}_me`}>{slide.oldPrice}</div>
+                            <div className={`oldPrice_div2_${typeClass}_me`}></div>
+                            
+                        </div>
 
                     </article>
 
