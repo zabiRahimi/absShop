@@ -492,14 +492,14 @@ const SliderMe = ({ className, slides, typeClass, title, symbol }) => {
 
                         <div className={`price_${typeClass}_me`} >
                             <div className={`price_toman_${typeClass}_me`}>تومان</div>
-                            <div className={`price_number_${typeClass}_me`}>{slide.price}</div>
-                            <div className={`price_percent_${typeClass}_me`}>{slide.oldPrice?`${Math.floor(((slide.oldPrice - slide.price)/slide.oldPrice) * 100 )}%` : ''}
+                            <div className={`price_number_${typeClass}_me`}>{Intl.NumberFormat('fa-IR').format(slide.price)}</div>
+                            <div className={`price_percent_${typeClass}_me`}>{slide.oldPrice?`${Intl.NumberFormat('fa-IR').format(Math.floor(((slide.oldPrice - slide.price)/slide.oldPrice) * 100 ))}%` : ''}
                             </div>
                         </div>
 
                         <div className={`oldPrice_${typeClass}_me`} >
                             <div className={`oldPrice_div1_${typeClass}_me`}></div>
-                            <div className={`oldPrice_price_${typeClass}_me`}>{slide.oldPrice}</div>
+                            <div className={`oldPrice_price_${typeClass}_me`}>{Intl.NumberFormat('fa-IR').format(slide.oldPrice)}</div>
                             <div className={`oldPrice_div2_${typeClass}_me`}></div>
                             
                         </div>
