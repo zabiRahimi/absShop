@@ -1,10 +1,51 @@
 
+
+import { useRef } from 'react';
+import ContainerMenu from './containerMenu/ContainerMenu';
 import styleNavHeader from './styleNavHeader.module.css';
+
+
 
 const NavHeader = () => {
 
+    const btnMenu = useRef(null);
+    const containerMenu = useRef(null);
+    const containerMenu_CME= useRef(null)
+
+    const showMenu = () => {
+        handleBodyScrollHidden();
+
+        handleHideBtn();
+        handleShowContainerMenu();
+    }
+
+
+    const handleBodyScrollHidden = () => {
+
+        const body = document.getElementsByTagName('body');
+        body[0].classList.add('--scrollHidden');
+
+    }
+
+
+    const handleHideBtn = () => {
+
+        btnMenu.current.classList.toggle('--displayNone');
+    }
+
+
+    const handleShowContainerMenu = () => {
+
+        containerMenu.current.classList.remove('--displayNone');
+        setTimeout(()=>{
+            containerMenu.current.classList.add('--width100');
+            containerMenu_CME.current.classList.add('--width100');
+        },2)
+        
+    }
+
     return (
-        <div className={styleNavHeader.container}>
+        <div className={styleNavHeader.container} >
 
             <div className={styleNavHeader.cart_container}>
                 <div className={styleNavHeader.cart_div_icon}>
@@ -32,7 +73,9 @@ const NavHeader = () => {
                 </div>
 
                 <div className={styleNavHeader.menu}>
-                    < i className={`icofont-navigation-menu `}></i>
+                    <button onClick={showMenu} className='--styleLessBtn' ref={btnMenu}>< i className={`icofont-navigation-menu --block `}></i></button>
+
+                    <ContainerMenu ref={ {containerMenu, containerMenu_CME}} refBtn={btnMenu}  />
                 </div>
             </nav>
 

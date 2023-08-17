@@ -1,3 +1,4 @@
+
 import TopHeader from "./subHeader/TopHeader"
 import SliderHeader from "./subHeader/SliderHeader";
 import NavHeader from "./subHeader/NavHeader";
@@ -10,7 +11,6 @@ const Header = () => {
             <SliderHeader />
             <NavHeader />
         </header>
-       
     )
 }
 

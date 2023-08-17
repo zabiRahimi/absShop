@@ -1,7 +1,7 @@
 
 :root {
 
-    --colorMore:#92b6c4;
+    --colorMore:#7492c1;
     /* --paddingContainer : 0 clamp(3px , 0.8vw , 15px); */
     --paddingContainer :clamp(3px , 2vw , 20px);
 }
@@ -16,5 +16,46 @@
 body {
     margin: 0;
     font-size: 16px;
-    padding-bottom: 50px;
+    
+    
 }
+
+/** 
+* For buttons that do not need styling
+* In fact, its content has styling
+*/
+.--styleLessBtn {
+    background-color: inherit;
+    border: none;
+}
+
+
+.--block{
+    display: block;
+}
+
+
+.--scrollHidden{
+    overflow:hidden ;
+    
+}
+
+
+.--displayNone {
+    display: none !important;
+
+}
+
+
+
+
+
+.--opacity0{
+    opacity: 0;
+}
+
+
+.--width100{
+    width: 100% !important;
+}
+

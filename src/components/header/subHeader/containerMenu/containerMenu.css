@@ -1,0 +1,110 @@
+
+.containerMain_CME{
+    width: 0; 
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.42s linear;
+}
+
+/**
+* The bottom layer has opacity
+*/
+.divOpacity_CME{
+    width: 100%;
+    height: 100vh;
+    background-color: #979797;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0.7;
+}
+
+.containerMenu_CME{
+    width: 0; 
+    max-width: max-content;
+    min-width: 33%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    overflow: auto;
+    transition: all 0.4s linear;
+
+}
+
+
+.divBtnClose_CME{
+    border-bottom: 1px solid #dbdbdb;
+}
+
+
+.btnClose_CME{
+    color: red;
+}
+
+.cotainerItems_CME{
+    padding: 5px;
+    direction: rtl;
+    background-color: #f3f3f3;
+    
+}
+
+
+.divItems_CME{
+    padding: 3px 2px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+
+.btnItem_CME {
+    width: 100%;
+    margin:4px 0 6px;
+    padding: 2px 7px 4px 4px;
+    display: flex;
+   align-items: center;
+   border-radius: 8px;
+   column-gap: 7px;
+}
+
+
+.btnItem_CME:hover{
+    color: #4d4dad ;
+}
+
+
+.btnItem_CME i{
+    font-size: 1.1rem;
+}
+
+
+.btnItem_CME span{
+    font-size: 0.8rem;
+    font-weight: 600;
+    position: relative;
+    top: -2px;
+}
+
+
+.btnItem_CME i.lastChild_CME{
+    
+    margin-right: auto;
+    
+   
+}
+
+
+
+
+.divShowSubMenu_CME{
+    width: 100%;
+    position: relative;
+}
+
+

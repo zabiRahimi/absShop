@@ -1,0 +1,31 @@
+
+import { useEffect } from 'react';
+import './subMenu.css'
+const SubMenu = () => {
+
+    // useEffect(()=>{
+    //     console.log(header.current.offsetHeight);
+    // })
+    const handle = () => {}
+    return (
+        <div className="containerMain_SME">
+            {/* <div className="divClose_SME">
+                <button className="--styleLessBtn btnClose_SME"><i className="icofont-long-arrow-right" /></button>
+            </div> */}
+            <div className="containerItems_SME">
+
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>تی شرت </span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>موبایل</span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>کیف و کفش</span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>وسایل خودرو</span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>آشپزخانه</span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>حبوبات</span></button>
+                <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>لوازم تحریر</span></button>
+
+            </div>
+
+        </div>
+    );
+}
+
+export default SubMenu;

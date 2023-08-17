@@ -1,3 +1,4 @@
+import Footer from "../footer/Footer";
 import NormalShowProduct from "../normalShowProduct/NormalShowProduct";
 import SliderSliding from "../sliderSliding/SliderSliding";
 import ProductSlider from "./ProductSlider";
@@ -742,6 +743,8 @@ const Main = () => {
             <SliderSliding {...settingSliderSliding} />
 
             <NormalShowProduct {...settingsNormalShowProduct} />
+
+            <Footer />
 
 
         </main>
