@@ -2,10 +2,11 @@
 .containerMain_CME{
     width: 0; 
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     transition: all 0.42s linear;
+    z-index: 1000;
 }
 
 /**

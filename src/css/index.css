@@ -4,6 +4,8 @@
     --colorMore:#7492c1;
     /* --paddingContainer : 0 clamp(3px , 0.8vw , 15px); */
     --paddingContainer :clamp(3px , 2vw , 20px);
+    --colorBtnUp :#fd5050;
+    --hoverLink : #0879e2;
 }
 
 * {
@@ -27,6 +29,12 @@ body {
 .--styleLessBtn {
     background-color: inherit;
     border: none;
+}
+
+
+.--styleLessLink {
+    color: inherit;
+    text-decoration: none;
 }
 
 

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './footer.css';
 export default function Footer() {
     return <footer className="containerFooter">
@@ -13,20 +14,48 @@ export default function Footer() {
             <div className='logoFooter'>logo</div>
             <div className='shopFooter'>
                 <div className='itmeShopFooter'>
-                    <button><i className='icofont-info-circle ' /> <span>درباره ما</span></button>
+                    <Link className='--styleLessLink linkFooter' to='/aboutUs'>
+
+                        <i className='icofont-info-circle ' />
+                         <span>درباره ما</span>
+
+                    </Link>
                 </div>
                 <div className='itmeShopFooter'>
-                    <button><i className='icofont-phone-circle ' /> <span>تماس با ما</span></button>
+                    <Link className='--styleLessLink linkFooter' to='/contactUs'>
+
+                        <i className='icofont-phone-circle ' />
+                         <span>تماس با ما</span>
+                        
+                    </Link>
+
                 </div>
                 <div className='itmeShopFooter'>
-                    <button><i className='icofont-handshake-deal ' /> <span>همکاری با ما</span></button>
+                    <Link className='--styleLessLink linkFooter' to='/cooperationUs'>
+
+                        <i className='icofont-handshake-deal ' />
+                         <span>همکاری با ما</span>
+
+                    </Link>
+
                 </div>
                 <div className='itmeShopFooter'>
-                    <button><i className='icofont-google-talk ' /> <span>انتقاد و پیشنهاد</span>
-                    </button>
+                    <Link className='--styleLessLink linkFooter' to='/criticismAndSuggestions'>
+
+                        <i className='icofont-google-talk ' /> 
+                        <span>انتقاد و پیشنهاد</span>
+                        
+                    </Link>
+
                 </div>
                 <div className='itmeShopFooter'>
-                    <button><i className='icofont-law-order ' /> <span>شکایات</span></button>
+                    <Link className='--styleLessLink linkFooter' to='/complaint'>
+
+                        <i className='icofont-law-order ' />
+                         <span>شکایات</span>
+
+                    </Link>
+
                 </div>
             </div>
         </div>

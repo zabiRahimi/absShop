@@ -1,7 +1,7 @@
 
 import { forwardRef, useRef } from 'react';
 import './containerMenu.css'
-import SubMenu from '../subMenu/SubMenu';
+import SubMenuVertical from '../subMenuVertical/SubMenuVertical';
 
 const ContainerMenu = forwardRef(({ refBtn }, ref) => {
     const SubMenuPros = useRef(null);
@@ -122,7 +122,7 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
                     <div className='divShowSubMenu_CME  --displayNone' ref={SubMenuPros}>
 
 
-                        <SubMenu />
+                        <SubMenuVertical />
 
                     </div>
 

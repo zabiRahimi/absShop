@@ -50,33 +50,30 @@
     text-align: right;
 }
 
-.itmeShopFooter button {
+ .linkFooter {
     width: 100%;
     margin: 8px 0;
-    
     font-size: 0.8rem;
     font-weight: 700;
     color: #9ff4e5;
-    background-color: inherit;
-    border: none;
-    display: grid;
-    grid-template-columns:  30px auto;
-    direction: rtl;
-    justify-content: right;
+    display: flex;
     align-items: center;
-    column-gap: 3px;
+    flex-direction: row-reverse;
+    column-gap: 5px;
 }
 
 
-.itmeShopFooter button:hover {
+.linkFooter:hover {
 
     color: #71b1a6;
 
 }
 
-.itmeShopFooter button i{
-    width: 40px;
+.linkFooter i{
+    /* width: 40px; */
     font-size: 1rem;
+    position: relative;
+    top: 2px;
     
 
 }
@@ -155,4 +152,27 @@
 .itmeFollowFooter img {
     width: 25px;
     height: auto;
+}
+
+
+@media screen and (min-width: 769px) {
+
+    .webFooter{
+        font-size: 1.3rem;
+    }
+    
+    .flagFooter img {
+        width: 60px;
+        height: 35px;
+    }
+    
+    .linkFooter{
+        font-size: 0.96rem;
+        margin-top: 13px;
+        column-gap: 7px;
+    }
+
+    .linkFooter i{
+        font-size: 1.2rem;
+    }
 }

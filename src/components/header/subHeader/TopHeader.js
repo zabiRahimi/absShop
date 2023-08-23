@@ -1,4 +1,6 @@
 
+import { Link, Outlet } from "react-router-dom";
+
 import styleTopHeader from './topHeader.module.css';
 
 const TopHeader = () => {
@@ -12,18 +14,33 @@ const TopHeader = () => {
 
 
             <div className={styleTopHeader.about_us} >
-                <i className={`icofont-info-circle ${styleTopHeader.hover_icon}`}></i>
+                <Link className="--styleLessLink" to='/aboutUs'>
+
+                    <i className={`icofont-info-circle ${styleTopHeader.hover_icon}`}></i>
+
+                </Link>
+
             </div>
 
             <div className={styleTopHeader.contact_us}>
-                <i className={` icofont-phone-circle ${styleTopHeader.hover_icon}`}></i>
+                <Link className="--styleLessLink" to='/contactUs'>
+
+                    <i className={` icofont-phone-circle ${styleTopHeader.hover_icon}`}></i>
+
+                </Link>
+
             </div>
 
 
             <div className={`${styleTopHeader.sing} ${styleTopHeader.hover_icon}`}>
-                <i className="icofont-ui-user"></i>
-                /
-                <i className="icofont-login"></i>
+                <Link className="--styleLessLink" to='/sing'>
+
+                    <i className="icofont-ui-user"></i>
+                    /
+                    <i className="icofont-login"></i>
+
+                </Link>
+
             </div>
 
         </div>

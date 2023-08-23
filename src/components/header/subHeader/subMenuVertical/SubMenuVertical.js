@@ -1,17 +1,17 @@
 
-import { useEffect } from 'react';
-import './subMenu.css'
+
+import './subMenuVertical.css';
+
 const SubMenu = () => {
 
-    // useEffect(()=>{
-    //     console.log(header.current.offsetHeight);
-    // })
-    const handle = () => {}
+    const handle = () => {
+
+    }
+
+    
     return (
         <div className="containerMain_SME">
-            {/* <div className="divClose_SME">
-                <button className="--styleLessBtn btnClose_SME"><i className="icofont-long-arrow-right" /></button>
-            </div> */}
+            
             <div className="containerItems_SME">
 
                 <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>تی شرت </span></button>
