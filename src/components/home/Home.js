@@ -1,22 +1,28 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import useChengeDocumentTitle from "../hooks/useSetDocumentTitle";
+import Header from "../header/Header";
 import Aside from "../aside/aside";
-import Header from "../header/Header"
 import Main from "../main/main";
 
- const Home = () => {
-     return(
+
+const Home = () => {
+
+    useChengeDocumentTitle('خانه');
+
+    return (
+
         <div>
-            
+
             <Header />
 
             <Aside />
-            
-            <Main />
-           
-            
-        </div>
-     )
- }
 
- export default Home;
+            <Main />
+
+        </div>
+
+    );
+
+}
+
+export default Home;

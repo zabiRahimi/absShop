@@ -1,16 +1,19 @@
 
 import { forwardRef, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 import './containerMenu.css'
 import SubMenuVertical from '../subMenuVertical/SubMenuVertical';
 
 const ContainerMenu = forwardRef(({ refBtn }, ref) => {
+
     const SubMenuPros = useRef(null);
     const iDownPros = useRef(null);
     const iUpPros = useRef(null);
 
     const handleClose = () => {
 
-        handleBodyScrollHidden();
+        handleBodyScrollShow();
         handleShowBtn();
         handleHideContainer();
         handleCloseSubMenu();
@@ -18,7 +21,7 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
     }
 
 
-    const handleBodyScrollHidden = () => {
+    const handleBodyScrollShow = () => {
 
         const body = document.getElementsByTagName('body');
         body[0].classList.remove('--scrollHidden');
@@ -47,162 +50,177 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
     }
 
 
-   const handleCloseSubMenu = ()=>{
+    const handleCloseSubMenu = () => {
         handleShowIDown();
         handleHideIUp();
         handleHideSubMenu();
     }
 
 
-    const handleShowIDown=()=>{
+    const handleShowIDown = () => {
+
         const elements = Array.from(document.getElementsByClassName('down_CME'));
-        elements.forEach((element)=>{
+
+        elements.forEach((element) => {
+
             element.classList.remove('--displayNone');
-        })
+
+        });
+
     }
 
 
-    const handleHideIUp=()=>{
+    const handleHideIUp = () => {
+
         const elements = Array.from(document.getElementsByClassName('up_CME'));
-        elements.forEach((element)=>{
+
+        elements.forEach((element) => {
+
             element.classList.add('--displayNone');
-        })
+
+        });
 
     }
 
 
-    const handleHideSubMenu=()=>{
+    const handleHideSubMenu = () => {
+
         const elements = Array.from(document.getElementsByClassName('divShowSubMenu_CME'));
-        elements.forEach((element)=>{
-            element.classList.add('--displayNone');
-        })
-    }
 
+        elements.forEach((element) => {
+
+            element.classList.add('--displayNone');
+
+        });
+
+    }
 
 
     const handleShowSubMenu = (iDown, iUp, subMenu) => {
+
         iDown.current.classList.toggle('--displayNone');
         iUp.current.classList.toggle('--displayNone');
         subMenu.current.classList.toggle('--displayNone');
+
     }
 
 
-    return <div ref={ref.containerMenu} className='containerMain_CME --displayNone ' >
+    return (
 
-        {/**
-        * The bottom layer has opacity
-        */}
-        <div className="divOpacity_CME" onClick={handleClose}></div>
+        <div ref={ref.containerMenu} className='containerMain_CME --displayNone ' >
 
-        <div className='containerMenu_CME' ref={ref.containerMenu_CME}>
+            {/**
+                * The bottom layer has opacity
+            */}
+            <div className="divOpacity_CME" onClick={handleClose}></div>
 
-            <div className='divBtnClose_CME'>
+            <div className='containerMenu_CME' ref={ref.containerMenu_CME}>
 
-                <button onClick={handleClose} className='--styleLessBtn btnClose_CME'>
-                    <i className='icofont-close ' />
-                </button>
+                <div className='divBtnClose_CME'>
 
-
-
-            </div>
-
-            <div className='cotainerItems_CME'>
-
-                <div className='divItems_CME ' >
-
-                    <button className='--styleLessBtn btnItem_CME' onClick={() => (handleShowSubMenu(iDownPros,iUpPros,SubMenuPros))} >
-
-                        <i className='icofont-tasks-alt ' />
-                        <span>محصولات</span>
-                        <i className='icofont-rounded-down down_CME lastChild_CME' ref={iDownPros} />
-                        <i className='icofont-rounded-up up_CME lastChild_CME --displayNone' ref={iUpPros} />
-
+                    <button onClick={handleClose} className='--styleLessBtn btnClose_CME'>
+                        <i className='icofont-close ' />
                     </button>
 
-                    <div className='divShowSubMenu_CME  --displayNone' ref={SubMenuPros}>
+                </div>
 
+                <div className='cotainerItems_CME'>
 
-                        <SubMenuVertical />
+                    <div className='divItems_CME ' >
+
+                        <button className='--styleLessBtn btnItem_CME' onClick={() => (handleShowSubMenu(iDownPros, iUpPros, SubMenuPros))} >
+
+                            <i className='icofont-tasks-alt ' />
+                            <span>محصولات</span>
+                            <i className='icofont-rounded-down down_CME lastChild_CME' ref={iDownPros} />
+                            <i className='icofont-rounded-up up_CME lastChild_CME --displayNone' ref={iUpPros} />
+
+                        </button>
+
+                        <div className='divShowSubMenu_CME  --displayNone' ref={SubMenuPros}>
+
+                            <SubMenuVertical />
+
+                        </div>
+
+                        <button className='--styleLessBtn btnItem_CME'  >
+
+                            <i className='icofont-tasks-alt ' />
+                            <span>موبایل</span>
+                            <i className='icofont-rounded-down lastChild_CME' />
+                            <i className='icofont-rounded-up lastChild_CME --displayNone ' />
+
+                        </button>
 
                     </div>
 
+                    <div className='divItems_CME '>
 
-                    <button className='--styleLessBtn btnItem_CME'  >
+                        <button className='--styleLessBtn btnItem_CME' >
 
-                        <i className='icofont-tasks-alt ' />
-                        <span>موبایل</span>
-                        <i className='icofont-rounded-down lastChild_CME'  />
-                        <i className='icofont-rounded-up lastChild_CME --displayNone '  />
+                            <i className='icofont-login ' />
+                            <span>ورود</span>
 
-                    </button>
+                        </button>
 
-                </div>
+                        <button className='--styleLessBtn btnItem_CME' >
 
-                <div className='divItems_CME '>
+                            <i className='icofont-ui-user ' />
+                            <span>ثبت نام</span>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        </button>
 
-                        <i className='icofont-login ' />
-                        <span>ورود</span>
+                    </div>
 
-                    </button>
+                    <div className='divItems_CME '>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        <button className='--styleLessBtn btnItem_CME' >
 
-                        <i className='icofont-ui-user ' />
-                        <span>ثبت نام</span>
+                            <i className='icofont-ebook ' />
+                            <span>راهنمای ثبت سفارش</span>
 
-                    </button>
+                        </button>
 
-                </div>
+                    </div>
 
-                <div className='divItems_CME '>
+                    <div className='divItems_CME '>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        <Link className='--styleLessLink linkItem_CME' to='/aboutUs' onClick={handleBodyScrollShow}>
 
-                        <i className='icofont-ebook ' />
-                        <span>راهنمای ثبت سفارش</span>
+                            <i className='icofont-info-circle ' />
+                            <span>درباره ما</span>
 
-                    </button>
+                        </Link>
 
-                </div>
+                        <Link className='--styleLessLink linkItem_CME' to='/contactUs' onClick={handleBodyScrollShow}>
 
-                <div className='divItems_CME '>
+                            <i className='icofont-phone-circle ' />
+                            <span>تماس با ما</span>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        </Link>
 
-                        <i className='icofont-info-circle ' />
-                        <span>درباره ما</span>
+                        <Link className='--styleLessLink linkItem_CME' to='/cooperationUs' onClick={handleBodyScrollShow}>
 
-                    </button>
+                            <i className='icofont-handshake-deal ' />
+                            <span>همکاری با ما</span>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        </Link>
 
-                        <i className='icofont-phone-circle ' />
-                        <span>تماس با ما</span>
+                        <Link className='--styleLessLink linkItem_CME' to='/criticismAndSuggestions' onClick={handleBodyScrollShow}>
 
-                    </button>
+                            <i className='icofont-google-talk ' />
+                            <span>انتقاد و پیشنهاد</span>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        </Link>
 
-                        <i className='icofont-handshake-deal ' />
-                        <span>همکاری با ما</span>
+                        <Link className='--styleLessLink linkItem_CME' to='/complaint' onClick={handleBodyScrollShow}>
 
-                    </button>
+                            <i className='icofont-law-order ' />
+                            <span>شکایت</span>
 
-                    <button className='--styleLessBtn btnItem_CME' >
+                        </Link>
 
-                        <i className='icofont-google-talk ' />
-                        <span>انتقاد و پیشنهاد</span>
-
-                    </button>
-
-                    <button className='--styleLessBtn btnItem_CME' >
-
-                        <i className='icofont-law-order ' />
-                        <span>شکایت</span>
-
-                    </button>
+                    </div>
 
                 </div>
 
@@ -210,12 +228,9 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
 
         </div>
 
+    );
 
-
-    </div>
-
-
-})
+});
 
 
 export default ContainerMenu;
