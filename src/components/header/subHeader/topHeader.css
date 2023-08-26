@@ -1,0 +1,254 @@
+
+.container_header_logo {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+    column-gap: clamp(8px, 1.5vw, 35px);
+}
+
+
+.logo {
+    margin-right: clamp(1px, 2vw, 200px);
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+
+
+.about_us,
+.contact_us {
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+.sign {
+    height: 37px;
+    color: #000;
+    font-size: 1.2rem;
+    margin-left: auto;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.bgColorSign_THe {
+    background-color: #eee;
+}
+
+
+.iUpSign_THe {
+    font-size: 1rem;
+    color: red;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}
+
+
+.hover_icon:hover {
+    color: #747474;
+}
+
+
+.showSignLink_THe {
+    width: 220px;
+    padding: 0 8px;
+    background-color: #fff;
+    border: 2px solid #919090;
+    border-radius: 5px;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    z-index: 101;
+}
+
+
+.iCaretUp {
+    margin: 0;
+    padding: 0;
+    margin-left: 170px;
+    display: inline;
+    position: relative;
+    top: -18px;
+    font-size: 1.4rem;
+    color: #919090;
+}
+
+
+.btnCloseSign_THe {
+    margin-bottom: 5px;
+}
+
+
+.btnCloseSign_THe i {
+    color: red;
+    font-size: 1.3rem;
+}
+
+
+.signLink_THe {
+    height: 40px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 8px;
+    align-items: center;
+    background-color: #eee;
+}
+
+
+.signLink_THe:last-child {
+    margin-bottom: 15px;
+}
+
+
+.signLink_THe i {
+    position: relative;
+    font-size: 1.3rem;
+}
+
+
+.signLink_THe span {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+.spanSignIn {
+    position: relative;
+    top: -4px;
+}
+
+
+.iSignIn {
+    rotate: 180deg;
+}
+
+
+
+@media screen and (min-width: 320px) {
+
+    .container_header_logo {
+        height: 50px;
+        padding: 0 8px;
+    }
+
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+
+    .about_us,
+    .contact_us,
+    .sign {
+        font-size: 1.3rem;
+    }
+
+
+    .sign {
+        padding: 0 5px;
+    }
+
+
+    .iUpSign_THe {
+        margin-right: 8px;
+    }
+
+
+    .showSignLink_THe {
+        top: 42px;
+    }
+
+
+    .iCaretUp {
+        top: -20px;
+        font-size: 1.5rem;
+        right: 10px;
+    }
+
+}
+
+
+@media screen and (min-width: 560px) {
+
+    .container_header_logo {
+        height: 55px;
+        padding: 0 13px;
+    }
+
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+
+    .about_us,
+    .contact_us,
+    .sign {
+        font-size: 1.5rem;
+    }
+
+
+    .showSignLink_THe {
+        width: 250px;
+        top: 44px;
+    }
+
+
+    .iCaretUp {
+        margin-left: 200px;
+        top: -23px;
+        font-size: 1.6rem;
+        right: 10px;
+    }
+
+
+    .signLink_THe span {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .sign {
+        margin-right: 15px;
+    }
+
+
+    .iCaretUp {
+        font-size: 1.6rem;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .logo,
+    .about_us,
+    .contact_us,
+    .sign {
+        font-size: 28px;
+    }
+
+
+    .iCaretUp {
+        top: -29px;
+
+    }
+
+}
