@@ -1,11 +1,10 @@
-
 :root {
 
-    --colorMore:#7492c1;
+    --colorMore: #7492c1;
     /* --paddingContainer : 0 clamp(3px , 0.8vw , 15px); */
-    --paddingContainer :clamp(3px , 2vw , 20px);
-    --colorBtnUp :#fd5050;
-    --hoverLink : #0879e2;
+    --paddingContainer: clamp(3px, 2vw, 20px);
+    --colorBtnUp: #fd5050;
+    --hoverLink: #0879e2;
 }
 
 * {
@@ -15,11 +14,36 @@
     outline: none;
 }
 
+* {
+    @font-face {
+        font-family: 'b koodak';
+        src: url('../assets/fonts/BKoodakBold.eot');
+        src: url('../assets/fonts/BKoodakBold.eot?#') format('eot'),
+            /* IE6–8 */
+            url('../assets/fonts/BKoodakBold.woff') format('woff'),
+            url('../assets/fonts/BKoodakBold.ttf') format('truetype');
+        /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+        font-family: 'b yekan';
+        src: url('../assets/fonts/BYekan.eot?#') format('eot'),
+            /* IE6–8 */
+            url('../assets/fonts/BYekan.woff') format('woff'),
+            /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../assets/fonts/BYekan.ttf') format('truetype');
+        /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+    }
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     margin: 0;
     font-size: 16px;
-    
-    
+    font-family: 'b koodak';
+
 }
 
 /** 
@@ -38,14 +62,14 @@ body {
 }
 
 
-.--block{
+.--block {
     display: block;
 }
 
 
-.--scrollHidden{
-    overflow:hidden ;
-    
+.--scrollHidden {
+    overflow: hidden;
+
 }
 
 
@@ -58,12 +82,11 @@ body {
 
 
 
-.--opacity0{
+.--opacity0 {
     opacity: 0;
 }
 
 
-.--width100{
+.--width100 {
     width: 100% !important;
 }
-
