@@ -4,7 +4,7 @@ import './itemsMenuHorizontal.css';
 
 const ItemsMenuHorizontal = ({ array, closeAllItems }) => {
     let arrayItems;
-    
+
     const mobile = {
         nokia: [
             'nokie 1',
@@ -351,42 +351,38 @@ const ItemsMenuHorizontal = ({ array, closeAllItems }) => {
 
     switch (array) {
         case 'mobile':
-            arrayItems =mobile;
+            arrayItems = mobile;
             break;
         case 'foodstuffs':
-            arrayItems =foodstuffs;
+            arrayItems = foodstuffs;
             break;
         case 'homeAndKitchen':
-            arrayItems =homeAndKitchen;
+            arrayItems = homeAndKitchen;
             break;
         case 'carSpareParts':
-            arrayItems =carSpareParts;
+            arrayItems = carSpareParts;
             break;
         case 'fashionAndClothing':
-            arrayItems =fashionAndClothing;
+            arrayItems = fashionAndClothing;
             break;
         case 'sportsAndTravel':
-            arrayItems =sportsAndTravel;
+            arrayItems = sportsAndTravel;
             break;
         default:
-            arrayItems ={};
+            arrayItems = {};
 
             break;
     }
 
     useEffect(() => {
         // for (const [key,value] of mobile) {
-        //     console.log(key);
         // }
-        // console.log(mobile.keys());
 
         // Object.keys(mobile).find(key => obj[key].includes(value));
         //    let keyss = Object.keys(mobile).find(key => (<div>{key}</div>,mobile[key].map((m)=>(
-        //     console.log(m))
         //    )));
 
         // Object.values(mobile).map((element, i)=>{
-        //     console.log(element[i]);
         // });
     })
 
@@ -403,7 +399,6 @@ const ItemsMenuHorizontal = ({ array, closeAllItems }) => {
     //         </div>
     //      });
 
-    //     console.log(m);
     //     return m
 
 
