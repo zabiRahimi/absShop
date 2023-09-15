@@ -1,3 +1,13 @@
+:root {
+
+    --colorMore: #7492c1;
+    /* --paddingContainer : 0 clamp(3px , 0.8vw , 15px); */
+    --paddingContainer: clamp(3px, 2vw, 20px);
+    --colorBtnUp: #fd5050;
+    --hoverLink: #0879e2;
+    --colorLink: #0c62b3;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +15,81 @@
     outline: none;
 }
 
+* {
+    @font-face {
+        font-family: 'b koodak';
+        src: url('../assets/fonts/BKoodakBold.eot');
+        src: url('../assets/fonts/BKoodakBold.eot?#') format('eot'),
+            /* IE6–8 */
+            url('../assets/fonts/BKoodakBold.woff') format('woff'),
+            url('../assets/fonts/BKoodakBold.ttf') format('truetype');
+        /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+        font-family: 'b yekan';
+        src: url('../assets/fonts/BYekan.eot?#') format('eot'),
+            /* IE6–8 */
+            url('../assets/fonts/BYekan.woff') format('woff'),
+            /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../assets/fonts/BYekan.ttf') format('truetype');
+        /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+    }
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     margin: 0;
     font-size: 16px;
+    font-family: 'b koodak';
+
+}
+
+/** 
+* For buttons that do not need styling
+* In fact, its content has styling
+*/
+.--styleLessBtn {
+    background-color: inherit;
+    border: none;
+}
+
+
+.--styleLessLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.--block {
+    display: block;
+}
+
+
+.--scrollHidden {
+    overflow: hidden;
+
+}
+
+
+.--displayNone {
+    display: none !important;
+
+}
+
+
+.--colorLink {
+    color: #0c62b3;
+}
+
+
+.--opacity0 {
+    opacity: 0;
+}
+
+
+.--width100 {
+    width: 100% !important;
 }

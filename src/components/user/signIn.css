@@ -1,0 +1,106 @@
+.divBtnGetBtn_SI {
+
+    margin-top: 10px;
+    direction: rtl;
+
+}
+
+
+.divBtnGetBtn_SI p {
+
+    font-size: 0.85rem;
+
+}
+
+
+.btnGetBtn_SI {
+
+    color: var(--colorLink);
+    text-decoration: underline;
+
+}
+
+
+.swalPopuLogin_SI {
+
+    padding: 10px 0;
+
+}
+
+
+.mySwalDivITickMard_SI {
+
+    margin: 0 auto 5px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #008000;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.mySwalITickMark_SI {
+
+    color: #008000;
+    font-size: 2.8rem;
+}
+
+
+.mySwalDivTitle_SI {
+
+    margin-top: 15px;
+}
+
+
+.mySwalTitle_SI {
+
+    font-size: 1.2rem;
+    color: #429e42;
+    direction: rtl;
+
+}
+
+
+.mySwalContainerBtn_SI {
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.mySwalBtn_SI {
+
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    direction: rtl;
+    margin-bottom: 6px;
+    text-align: right;
+    align-items: center;
+    gap: 12px;
+    color: var(--colorLink);
+
+}
+
+@media screen and (min-width:500px) {
+
+    .mySwalContainerBtn_SI {
+
+        margin-top: 20px;
+
+    }
+
+
+    .mySwalBtn_SI {
+
+        width: 130px;
+
+    }
+
+}
