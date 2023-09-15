@@ -12,8 +12,8 @@ const NavHeader = () => {
     const ref = useRef();
     const container_NHS = useRef(null);
     const btnMenu = useRef(null);
-    const containerMenu = useRef(null);
-    const containerMenu_CME = useRef(null);
+    const verticalMenu = useRef(null);
+    const verticalMenu_VMe = useRef(null);
     const divSubMenu = useRef(null);
 
     const divItemProNHS = useRef(null);
@@ -49,7 +49,7 @@ const NavHeader = () => {
 
         handleHideBtn();
 
-        handleShowContainerMenu();
+        handleShowVerticalSubmenu();
 
     }
 
@@ -79,12 +79,12 @@ const NavHeader = () => {
     }
 
 
-    const handleShowContainerMenu = () => {
+    const handleShowVerticalSubmenu = () => {
 
-        containerMenu.current.classList.remove('--displayNone');
+        verticalMenu.current.classList.remove('--displayNone');
         setTimeout(() => {
-            containerMenu.current.classList.add('--width100');
-            containerMenu_CME.current.classList.add('--width100');
+            verticalMenu.current.classList.add('--width100');
+            verticalMenu_VMe.current.classList.add('--width100');
         }, 2)
 
     }
@@ -218,7 +218,7 @@ const NavHeader = () => {
                 <div className='menu_NHS'>
                     <button onClick={showMenu} className='--styleLessBtn menubutton_NHS' ref={btnMenu}>< i className='icofont-navigation-menu --block'></i></button>
 
-                    <VerticalSubmenu ref={{ containerMenu, containerMenu_CME }} refBtn={btnMenu} />
+                    <VerticalSubmenu ref={{ verticalMenu, verticalMenu_VMe }} refBtn={btnMenu} />
                 </div>
             </nav>
 
