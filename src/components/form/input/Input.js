@@ -1,12 +1,12 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+// import { useResolvedPath } from 'react-router-dom';
+// import Swal from 'sweetalert2';
+// import withReactContent from 'sweetalert2-react-content';
 import './input.css';
-import { useResolvedPath } from 'react-router-dom';
 
 const Input = forwardRef(({ type, id, name, label, direction, required, error }, ref) => {
 
-    const MySwal = withReactContent(Swal);
+    // const MySwal = withReactContent(Swal);
 
     const inputWrapper_IF = useRef(null);
     const iStar_IF = useRef(null);
@@ -19,9 +19,6 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
     const iEyeBlocked_IF = useRef(null);
 
 
-
-
-
     useEffect(() => {
 
         input.current.style.direction = direction;
@@ -32,18 +29,25 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
 
     }, []);
 
+
     useImperativeHandle(ref, () => ({
+
         getInput: () => {
+
             return input.current
+
         },
 
-
         errorStyle: () => {
+
             errorStyle();
+
         },
 
         trueStyle: () => {
+
             trueStyle();
+
         },
 
 
@@ -53,7 +57,9 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
     const handleFocus = () => {
 
         inputWrapper_IF.current.classList.add('borderBottomColor');
+
         inputWrapper_IF.current.classList.remove('greenBorder');
+
         inputWrapper_IF.current.classList.remove('redBorder');
 
         iTrue_IF.current.classList.add('--displayNone');
@@ -71,8 +77,8 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
 
         inputWrapper_IF.current.classList.remove('borderBottomColor');
 
-
     }
+
     // const star = (props.star == 'ok') ? <i className="fa fa-star star" aria-hidden="true"></i> : '';
     // const classInput='form-control inputForm '+props.id+'Input';
     // const classValidFeedback = 'validFeedback' + ' ' + props.id + 'Feedback';
@@ -86,8 +92,6 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
         value || labelInput_IF.current.classList.add('hidden');
 
         // name === 'userName' && checkCharUserName(e);
-
-
 
     }
 
@@ -138,20 +142,28 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
 
 
     const showPassword = () => {
+
         displayEyes();
-        input.current.type = 'text'
+
+        input.current.type = 'text';
+
     }
 
 
     const hidePassword = () => {
+
         displayEyes();
-        input.current.type = 'password'
+        input.current.type = 'password';
+
     }
 
 
     const displayEyes = () => {
+
         iEye_IF.current.classList.toggle('--displayNone');
+
         iEyeBlocked_IF.current.classList.toggle('--displayNone');
+
     }
 
 
@@ -166,7 +178,6 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
                 <i className='icofont-eye --displayNone iEye_IF' ref={iEye_IF} onClick={showPassword} />
 
                 <i className='icofont-eye-blocked --displayNone  iEye_IF' ref={iEyeBlocked_IF} onClick={hidePassword} />
-
 
                 <i className="icofont-tick-mark --displayNone iTrue_IF" ref={iTrue_IF} />
 
@@ -196,11 +207,12 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
                 
                 
             </div> */}
+
         </div>
 
     )
 
-
 });
+
 
 export default Input;

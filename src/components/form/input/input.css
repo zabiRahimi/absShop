@@ -67,6 +67,8 @@
 
 .iFalse_IF {
 
+    top: -9.6px;
+    font-size: 1.1rem;
     color: red;
 
 }
@@ -283,13 +285,6 @@
 
     }
 
-
-    .iFalse_IF {
-
-        top: -12px;
-        font-size: 1.25rem;
-
-    }
 
 }
 
