@@ -11,10 +11,10 @@ export default function NormalShowProduct({ title, hasMore, linkMore, bgColor, p
     const [getNumShowPro, setGetNumShowPro] = useState(1);
     const [moreShowPro, setMoreShowPro] = useState(0);
 
-    
+
     containerNSP_pro.current = Object.values(products).map((_, i) => containerNSP_pro.current[i] ?? createRef());
 
-  
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -44,14 +44,13 @@ export default function NormalShowProduct({ title, hasMore, linkMore, bgColor, p
 
                         break;
                     case 4:
-                        console.log(4);
                         getNumShowPro < 16 ? setGetNumShowPro(16) : setGetNumShowPro(prev => prev - (prev % 4));
 
                         setMoreShowPro(8);
 
                         break;
                     case 5:
-                        
+
                         getNumShowPro < 15 ? setGetNumShowPro(15) : setGetNumShowPro(prev => (prev - (prev % 5)));
 
                         setMoreShowPro(10);
@@ -105,7 +104,7 @@ export default function NormalShowProduct({ title, hasMore, linkMore, bgColor, p
 
     }, [endLoad]);
 
-   
+
 
     useEffect(() => {
 
@@ -119,7 +118,7 @@ export default function NormalShowProduct({ title, hasMore, linkMore, bgColor, p
     }, []);
 
     const elements = Object.values(products).map((pro, i) => {
-        
+
         if (i < getNumShowPro) {
             return <div className='containerNSP_pro' ref={containerNSP_pro.current[i]} key={i}>
                 <div className='divImgNSP'>
@@ -212,7 +211,7 @@ export default function NormalShowProduct({ title, hasMore, linkMore, bgColor, p
 
             {
                 Object.values(products).length > getNumShowPro && <div className='containerMoreNSP'>
-                    <button onClick={showMorePro} className='btnMoreNSP'> <i className='icofont-curved-double-left '/> <span>بیشتر</span> </button>
+                    <button onClick={showMorePro} className='btnMoreNSP'> <i className='icofont-curved-double-left ' /> <span>بیشتر</span> </button>
                 </div>
             }
 

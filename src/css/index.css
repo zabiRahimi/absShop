@@ -5,6 +5,7 @@
     --paddingContainer: clamp(3px, 2vw, 20px);
     --colorBtnUp: #fd5050;
     --hoverLink: #0879e2;
+    --colorLink: #0c62b3;
 }
 
 * {
@@ -79,7 +80,9 @@ body {
 }
 
 
-
+.--colorLink {
+    color: #0c62b3;
+}
 
 
 .--opacity0 {
