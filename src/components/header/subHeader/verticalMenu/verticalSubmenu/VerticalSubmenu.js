@@ -1,6 +1,6 @@
 
 
-import './subMenuVertical.css';
+import './verticalSubmenu.css';
 
 const SubMenu = () => {
 
@@ -8,10 +8,10 @@ const SubMenu = () => {
 
     }
 
-    
+
     return (
         <div className="containerMain_SME">
-            
+
             <div className="containerItems_SME">
 
                 <button className='--styleLessBtn btn_SME' onClick={handle}> <i className='icofont-' /> <span>تی شرت </span></button>
