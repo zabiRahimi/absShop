@@ -1,9 +1,45 @@
 
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../contexts/UserContext';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 import './footer.css';
 
 export default function Footer() {
+
+    const { user, setUser } = useContext(UserContext);
+
+    const MySwal = withReactContent(Swal);
+
+
+
+    const logout = () => {
+        // هنگام توسعه سرور تکمیل شود
+
+        MySwal.fire({
+
+            title: 'آیا می‌خواهید خارج شوید؟',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'خیر',
+            confirmButtonText: 'بله',
+
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                sessionStorage.removeItem('userData');
+                setUser(prev => ({ ...prev, login: false, name: '', email: '' }));
+
+            }
+        })
+
+    }
+
 
     return (
 
@@ -18,6 +54,53 @@ export default function Footer() {
                     <img src={require(`../../assets/logos/iran.png`)} alt="iran" />
 
                 </div>
+
+            </div>
+
+            <div className='containerAccountFooter'>
+
+                {
+                    !user.login ?
+                        <>
+                            <Link className='--styleLessLink signInLink_Foo' to='signIn' >
+                                {/* linkItem_VMe */}
+
+
+                                <i className='icofont-login ' />
+                                <span>ورود</span>
+
+                            </Link>
+
+                            {/* // linkItem_VMe */}
+
+                            <Link className='--styleLessLink signUpLink_Foo' to='signUp'>
+
+                                <i className='icofont-ui-user ' />
+                                <span>ثبت نام</span>
+
+                            </Link>
+                        </>
+                        :
+                        <>
+                            <Link className='--styleLessLink profileLink_Foo' to='profile' >
+
+                                {/* linkItem_VMe profileLink_VMe */}
+
+                                <i className='icofont-ui-user  ' />
+                                <span> پیش خوان </span>
+
+                            </Link>
+
+                            <button className='--styleLessBtn logoutBtn_Foo' onClick={logout} >
+
+                                {/* btnItem_VMe signOutBtn_VMe */}
+
+                                <i className='icofont-sign-out ' />
+                                <span> خروج </span>
+
+                            </button>
+                        </>
+                }
 
             </div>
 

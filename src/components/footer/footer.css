@@ -5,7 +5,8 @@
     color: #9ff4e5;
 }
 
-.containerWebFooter {
+.containerWebFooter,
+.containerAccountFooter {
     padding: 0 4px 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,21 +14,48 @@
 }
 
 
-.webFooter {
-
-}
+.webFooter {}
 
 
 .flagFooter {
     margin-left: auto;
 
 }
+
 .flagFooter img {
     width: 50px;
     height: 23px;
 }
 
 
+.containerAccountFooter {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 40px;
+}
+
+
+.signInLink_Foo,
+.signUpLink_Foo,
+.profileLink_Foo,
+.logoutBtn_Foo {
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: 10px;
+
+
+}
+
+
+.logoutBtn_Foo {
+
+    color: #f7a9a9;
+
+}
 
 .containerShopFooter {
     margin-top: 8px;
@@ -50,7 +78,7 @@
     text-align: right;
 }
 
- .linkFooter {
+.linkFooter {
     width: 100%;
     margin: 8px 0;
     font-size: 0.8rem;
@@ -69,12 +97,12 @@
 
 }
 
-.linkFooter i{
+.linkFooter i {
     /* width: 40px; */
     font-size: 1rem;
     position: relative;
     top: 2px;
-    
+
 
 }
 
@@ -136,11 +164,11 @@
 
 .followFooter {
     margin: 20px auto 15px;
-  display: flex;
-  row-gap: 12px;
-  justify-content: center;
-  column-gap: 15px;
-  flex-flow: row wrap;
+    display: flex;
+    row-gap: 12px;
+    justify-content: center;
+    column-gap: 15px;
+    flex-flow: row wrap;
 }
 
 
@@ -157,22 +185,22 @@
 
 @media screen and (min-width: 769px) {
 
-    .webFooter{
+    .webFooter {
         font-size: 1.3rem;
     }
-    
+
     .flagFooter img {
         width: 60px;
         height: 35px;
     }
-    
-    .linkFooter{
+
+    .linkFooter {
         font-size: 0.96rem;
         margin-top: 13px;
         column-gap: 7px;
     }
 
-    .linkFooter i{
+    .linkFooter i {
         font-size: 1.2rem;
     }
 }
