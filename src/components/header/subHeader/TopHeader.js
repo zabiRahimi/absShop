@@ -5,10 +5,14 @@ import UserContext from "../../contexts/UserContext";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+
 import './topHeader.css';
 
 const TopHeader = () => {
     const { user, setUser } = useContext(UserContext);
+
+    const MySwal = withReactContent(Swal);
+
 
     const sign_THe = useRef(null);
     const iUpSign_THe = useRef(null);
@@ -65,7 +69,7 @@ const TopHeader = () => {
     const logout = () => {
         // هنگام توسعه سرور تکمیل شود
 
-        Swal.fire({
+        MySwal.fire({
             title: 'آیا می‌خواهید خارج شوید؟',
             // text: "You won't be able to revert this!",
             icon: 'warning',

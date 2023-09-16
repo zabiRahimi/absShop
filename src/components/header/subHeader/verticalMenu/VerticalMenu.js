@@ -1,11 +1,24 @@
 
-import { forwardRef, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { forwardRef, useContext, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import UserContext from '../../../contexts/UserContext';
 
 import VerticalSubmenu from './verticalSubmenu/VerticalSubmenu';
 import './verticalMenu.css'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const ContainerMenu = forwardRef(({ refBtn }, ref) => {
+
+const VerticalMenu = forwardRef(({ refBtn }, ref) => {
+
+    const navigate = useNavigate();
+
+    const { user, setUser } = useContext(UserContext);
+
+    const MySwal = withReactContent(Swal);
+
+
+
 
     const SubMenuPros = useRef(null);
     const iDownPros = useRef(null);
@@ -39,7 +52,7 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
     const handleHideContainer = () => {
 
         ref.verticalMenu.current.classList.remove('--width100');
-        ref.verticalMenu_VME.current.classList.remove('--width100');
+        ref.verticalMenu_VMe.current.classList.remove('--width100');
 
         setTimeout(function () {
 
@@ -105,6 +118,35 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
     }
 
 
+    const logout = () => {
+        // هنگام توسعه سرور تکمیل شود
+
+        MySwal.fire({
+            title: 'آیا می‌خواهید خارج شوید؟',
+            // text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'خیر',
+            confirmButtonText: 'بله'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                sessionStorage.removeItem('userData');
+                setUser(prev => ({ ...prev, login: false, name: '', email: '' }));
+                handleClose();
+
+                // sign_THe.current.classList.remove('bgColorSign_THe');
+                // showProfileLink_THe.current.classList.add('--displayNone');
+
+
+            }
+        })
+
+    }
+
+
     return (
 
         <div ref={ref.verticalMenu} className='containerMain_VMe --displayNone ' >
@@ -155,20 +197,40 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
                     </div>
 
                     <div className='divItems_VMe '>
+                        {
+                            !user.login ?
+                                <>
+                                    <Link className='--styleLessLink linkItem_VMe' to='signIn' >
 
-                        <button className='--styleLessBtn btnItem_VMe' >
+                                        <i className='icofont-login ' />
+                                        <span>ورود</span>
 
-                            <i className='icofont-login ' />
-                            <span>ورود</span>
+                                    </Link>
 
-                        </button>
+                                    <Link className='--styleLessLink linkItem_VMe' to='signUp'>
 
-                        <button className='--styleLessBtn btnItem_VMe' >
+                                        <i className='icofont-ui-user ' />
+                                        <span>ثبت نام</span>
 
-                            <i className='icofont-ui-user ' />
-                            <span>ثبت نام</span>
+                                    </Link>
+                                </>
+                                :
+                                <>
+                                    <Link className='--styleLessLink linkItem_VMe profileLink_VMe' to='signIn' >
 
-                        </button>
+                                        <i className='icofont-business-man-alt-1 ' />
+                                        <span> پیش خوان </span>
+
+                                    </Link>
+
+                                    <button className='--styleLessBtn btnItem_VMe signOutBtn_VMe' onClick={logout} >
+
+                                        <i className='icofont-sign-out ' />
+                                        <span> خروج </span>
+
+                                    </button>
+                                </>
+                        }
 
                     </div>
 
@@ -233,4 +295,4 @@ const ContainerMenu = forwardRef(({ refBtn }, ref) => {
 });
 
 
-export default ContainerMenu;
+export default VerticalMenu;
