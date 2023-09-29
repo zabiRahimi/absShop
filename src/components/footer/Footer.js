@@ -20,13 +20,30 @@ export default function Footer() {
 
         MySwal.fire({
 
-            title: 'آیا می‌خواهید خارج شوید؟',
-            icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             cancelButtonText: 'خیر',
             confirmButtonText: 'بله',
+            html: <div>
+                <div className='--mySwalWarningDiv'>
+
+                    <i className='icofont-exclamation --mySwalWarningIcon' />
+
+                </div>
+                <div className='--mySwalDivTitle'>
+
+                    <h3 className='--mySwalTitle'> آیا می‌خواهید خارج شوید؟ </h3>
+
+                </div>
+            </div>,
+
+            customClass: {
+
+                popup: '--mySwalPopup',
+                htmlContainer: '--mySwalHtml',
+
+            }
 
         }).then((result) => {
 

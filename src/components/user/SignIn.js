@@ -16,7 +16,6 @@ const SignIn = () => {
 
     const { setUser } = useContext(UserContext);
 
-
     const MySwal = withReactContent(Swal);
 
     const userName = useRef(null);
@@ -69,28 +68,35 @@ const SignIn = () => {
 
                 MySwal.fire({
 
-                    title: 'هشدار',
+                    html: <div className='zabiS'>
 
-                    icon: 'warning',
+                        <div className='--mySwalWarningDiv'>
+                            <i className='icofont-exclamation --mySwalWarningIcon' />
+                        </div>
 
-                    html: <ul className='swalUl_IF'>
+                        <div className='--mySwalDivTitle'>
 
-                        <li> شما می‌توانید از موبایل یا نام‌کاربری استفاده کنید. </li>
+                            <h3 className='--mySwalTitle --mySwalColorTitleOrange'> هشدار </h3>
 
-                        <li> دقت کنید، نام‌کاربری فقط شامل اعداد و حروف انگلیسی و علامت ( _ ) می‌باشد. </li>
+                        </div>
 
-                        <li> نام‌کاربری فقط با حروف و یا علامت ( _ ) شروع می‌شود. </li>
+                        <ul className='--mySwalUl --mySwalColorWarning'>
 
-                    </ul>,
+                            <li> شما می‌توانید از موبایل یا نام‌کاربری استفاده کنید. </li>
+
+                            <li> دقت کنید، نام‌کاربری فقط شامل اعداد و حروف انگلیسی و علامت ( _ ) می‌باشد. </li>
+
+                            <li> نام‌کاربری فقط با حروف و یا علامت ( _ ) شروع می‌شود. </li>
+
+                        </ul>
+                    </div>,
 
                     confirmButtonText: 'متوجه شدم',
 
                     customClass: {
 
-                        popup: 'swalPopup_IF',
-                        title: 'swalTitle_IF',
-                        icon: 'swalIcon_IF',
-                        htmlContainer: 'swalHtmlContainer',
+                        popup: '--mySwalPopup',
+                        htmlContainer: '--mySwalHtml',
 
                     }
 
@@ -340,8 +346,6 @@ const SignIn = () => {
          */
 
 
-
-
         // navigate('/profile')
 
         MySwal.fire({
@@ -350,37 +354,37 @@ const SignIn = () => {
 
             showConfirmButton: false,
 
-            html: <div className='mySwalLoginContainer_SI'>
+            html: <div >
 
-                <div className='mySwalDivITickMard_SI'>
+                <div className='--mySwalSuccessDiv1'>
 
-                    <i className='icofont-tick-mark mySwalITickMark_SI' />
-
-                </div>
-
-                <div className='mySwalDivTitle_SI'>
-
-                    <h3 className='mySwalTitle_SI'>خوش آمدید <i className='icofont-simple-smile  ' /> </h3>
+                    <i className='icofont-tick-mark --mySwalSuccessIcon1' />
 
                 </div>
 
-                <div className='mySwalContainerBtn_SI'>
+                <div className='--mySwalDivTitle'>
 
-                    <button className='--styleLessBtn mySwalBtn_SI' onClick={() => (setData(), Swal.close(), navigate('/profile'))}>
+                    <h3 className='--mySwalTitle --mySwalColorTitleGreen'>خوش آمدید <i className='icofont-simple-smile  ' /> </h3>
+
+                </div>
+
+                <div className='--mySwalContainerBtn'>
+
+                    <button className='--styleLessBtn --mySwalBtn' onClick={() => (setData(), Swal.close(), navigate('/profile'))}>
 
                         <i className='icofont-user-alt-3 ' />
                         <span> حساب کاربری </span>
 
                     </button>
 
-                    <button className='--styleLessBtn mySwalBtn_SI' onClick={() => (setData(), Swal.close(), navigate(-1))}>
+                    <button className='--styleLessBtn --mySwalBtn' onClick={() => (setData(), Swal.close(), navigate(-1))}>
 
                         <i className='icofont-redo ' />
                         <span> صحفه قبلی </span>
 
                     </button>
 
-                    <button className='--styleLessBtn mySwalBtn_SI' onClick={() => (setData(), Swal.close(), navigate('/'))}>
+                    <button className='--styleLessBtn --mySwalBtn' onClick={() => (setData(), Swal.close(), navigate('/'))}>
 
                         <i className='icofont-home ' />
                         <span> خانه </span>
@@ -393,7 +397,7 @@ const SignIn = () => {
 
             customClass: {
 
-                popup: 'swalPopuLogin_SI',
+                popup: '--mySwalPopup',
 
 
             }

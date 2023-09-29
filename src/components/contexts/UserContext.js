@@ -29,7 +29,7 @@ export const useUserContext = () => {
 
         setIsEffect(true);
 
-    }, [user.login, isEffect]);
+    }, [user.login]);
 
 
     return {

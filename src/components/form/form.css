@@ -71,7 +71,7 @@
     display: flex;
     justify-items: center;
     flex-flow: column;
-    background-color: white;
+    background-color: #ffffff;
     border: 1px solid #eaecef;
     border-radius: 12px;
 
@@ -127,7 +127,7 @@
     align-items: center;
     justify-content: center;
     justify-self: left;
-    background-color: white;
+    background-color: #ffffff;
     position: relative;
     top: -8px;
     left: 13px;
@@ -139,14 +139,14 @@
 
 .inputForm i.true {
 
-    color: green;
+    color: #008000;
 
 }
 
 
 .inputForm i.false {
 
-    color: red;
+    color: #ff0000;
 
 }
 
@@ -246,8 +246,13 @@
     background-color: green;
     border: none;
     border-radius: 12px;
-    color: white;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+
+.btnForm:hover {
+    border: 1px solid #fff;
 }
 
 
@@ -295,6 +300,19 @@
         margin: 20px auto;
         padding: 0 150px 15px;
 
+    }
+
+}
+
+
+@media screen and (min-width:1200px) {
+
+
+    .btnForm {
+
+        height: 40px;
+        background-color: #008000;
+        font-size: 1.18rem;
     }
 
 }

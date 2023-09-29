@@ -3,7 +3,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 // import UserContext from './contexts/UserContext';
 
-const PrivateRoute = ({ backPath, isLogin, isEffect, requiresLogin = true }) => {
+const UserGuardRoute = ({ backPath, isLogin, isEffect, requiresLogin = true }) => {
 
     // const { user } = useContext(UserContext);
 
@@ -60,4 +60,4 @@ const PrivateRoute = ({ backPath, isLogin, isEffect, requiresLogin = true }) => 
 };
 
 
-export default PrivateRoute;
+export default UserGuardRoute;

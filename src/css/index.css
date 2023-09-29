@@ -6,14 +6,19 @@
     --colorBtnUp: #fd5050;
     --hoverLink: #0879e2;
     --colorLink: #0c62b3;
+
 }
 
+
 * {
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     outline: none;
+
 }
+
 
 * {
     @font-face {
@@ -36,11 +41,14 @@
 
 ul,
 ol {
+
     padding: 0;
     margin: 0;
+
 }
 
 body {
+
     margin: 0;
     font-size: 16px;
     font-family: 'b koodak';
@@ -52,44 +60,297 @@ body {
 * In fact, its content has styling
 */
 .--styleLessBtn {
+
     background-color: inherit;
     border: none;
+
 }
 
 
 .--styleLessLink {
+
     color: inherit;
     text-decoration: none;
+
 }
 
 
 .--block {
+
     display: block;
 }
 
 
 .--scrollHidden {
+
     overflow: hidden;
 
 }
 
 
 .--displayNone {
+
     display: none !important;
 
 }
 
 
 .--colorLink {
+
     color: #0c62b3;
+
 }
 
 
 .--opacity0 {
+
     opacity: 0;
+
 }
 
 
 .--width100 {
+
     width: 100% !important;
+
+}
+
+
+.--centerText {
+
+    text-align: center;
+
+}
+
+
+
+
+/**
+   ********* for mySwal ********** 
+*/
+
+
+.--mySwalPopup {
+    width: 85%;
+    max-width: 550px;
+    padding: 10px;
+
+}
+
+.--mySwalHtml {
+
+    text-align: right !important;
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    direction: rtl;
+
+}
+
+
+
+/* icofont-tick-mark  */
+/*
+    <div className='--mySwalSuccessDiv1'>
+
+         <i className='icofont-tick-mark --mySwalSuccessIcon1' />
+
+    </div>
+ */
+.--mySwalSuccessDiv1,
+.--mySwalSuccessDiv2,
+.--mySwalWarningDiv {
+
+    margin: 0 auto 5px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #008000;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.--mySwalSuccessDiv2 {
+
+    width: auto;
+    height: auto;
+    border: none;
+
+}
+
+.--mySwalSuccessIcon1 {
+
+    color: #008000;
+    font-size: 2.8rem;
+
+}
+
+
+/* icofont-check-alt  */
+/* icofont-tick-boxed  */
+.--mySwalSuccessIcon2 {
+
+    color: #008000;
+    font-size: 1.8rem;
+
+}
+
+
+/*  
+  <div className='--mySwalWarningDiv'>
+     <i className='icofont-exclamation --mySwalWarningIcon' />
+  </div> 
+*/
+.--mySwalWarningDiv {
+
+    border-color: #fb7b04;
+    border-width: 3px;
+
+}
+
+.--mySwalWarningIcon {
+
+    font-size: 2.1rem;
+    color: #fb7b04;
+
+}
+
+
+/* iconfont-close  */
+.--errorIcon {}
+
+
+/* <span className='questionIcon' > ? </span> */
+.--questionIcon {}
+
+
+.--mySwalDivTitle {
+
+    margin-top: 15px;
+    /* text-align: center; */
+
+}
+
+
+.--mySwalTitle {
+
+    font-size: 1.2rem;
+    direction: rtl;
+    text-align: center;
+
+}
+
+
+.--mySwalColorTitleGreen {
+
+    color: #429e42;
+
+}
+
+
+.--mySwalColorTitleOrange {
+
+    color: #e69448;
+
+}
+
+.--mySwalColorWarning {
+
+    color: #d17c2b;
+
+}
+
+
+.--mySwalContainerBtn {
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.--mySwalBtn {
+
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    direction: rtl;
+    margin-bottom: 6px;
+    text-align: right;
+    align-items: center;
+    gap: 12px;
+    color: var(--colorLink);
+
+}
+
+
+.--mySwalUl {
+
+    padding-right: 5px !important;
+    list-style-position: inside;
+    direction: rtl;
+    font-size: 0.9rem;
+
+}
+
+
+@media screen and (min-width:500px) {
+
+    .--mySwalPopup {
+
+        padding: 20px;
+
+    }
+
+    .--mySwalContainerBtn {
+
+        margin-top: 20px;
+
+    }
+
+
+    .--mySwalBtn {
+
+        width: 130px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .--mySwalSuccessDiv1,
+    .--mySwalWarningDiv {
+
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .--mySwalSuccessIcon2,
+    .--mySwalWarningIcon {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .--mySwalTitle {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .--mySwalUl {
+
+        font-size: 1rem;
+    }
+
+
 }

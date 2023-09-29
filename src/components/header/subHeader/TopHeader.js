@@ -70,14 +70,33 @@ const TopHeader = () => {
         // هنگام توسعه سرور تکمیل شود
 
         MySwal.fire({
-            title: 'آیا می‌خواهید خارج شوید؟',
-            // text: "You won't be able to revert this!",
-            icon: 'warning',
+
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             cancelButtonText: 'خیر',
-            confirmButtonText: 'بله'
+            confirmButtonText: 'بله',
+
+            html: <div>
+                <div className='--mySwalWarningDiv'>
+
+                    <i className='icofont-exclamation --mySwalWarningIcon' />
+
+                </div>
+                <div className='--mySwalDivTitle'>
+
+                    <h3 className='--mySwalTitle'> آیا می‌خواهید خارج شوید؟ </h3>
+
+                </div>
+            </div>,
+
+            customClass: {
+
+                popup: '--mySwalPopup',
+                htmlContainer: '--mySwalHtml',
+
+            }
+
         }).then((result) => {
             if (result.isConfirmed) {
 
@@ -119,6 +138,7 @@ const TopHeader = () => {
 
             </div>
 
+            <Link to='/initialVerifyMobile'>initialVerifyMobile</Link>
 
             <div className='sign ' ref={sign_THe}>
 
