@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -15,12 +15,29 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
-    const { setSignUpData } = useContext(InitialVerifyMobileContext);
+    const { signUpData, setSignUpData } = useContext(InitialVerifyMobileContext);
 
     const MySwal = withReactContent(Swal);
 
     const mobile = useRef(null);
     const btnSubmit = useRef(null);
+
+    const [mobileValue, setMobileValue] = useState(signUpData.mobile);
+
+    useEffect(() => {
+
+        /**
+         * کاربرد دارد زمانی که کاربر از صفحه تایید موبایل برای
+         * اصلاح و تغییر موبایل اقدام می‌کند.
+         */
+        // signUpData.mobile && setMobileValue(signUpData.mobile);
+        console.log(signUpData.mobile);
+        console.log(`mobileValue = ${mobileValue}`);
+
+    }, [mobileValue]);
+
+
+
 
     useEffect(() => {
 
@@ -203,7 +220,7 @@ const SignUp = () => {
 
                 </div>
 
-                <Input type='text' id='mobile_SU' name='mobile' ref={mobile} label='موبایل' direction='ltr' required={true} error={' موبایل را صحیح وارد کنید.'} />
+                <Input type='text' id='mobile_SU' name='mobile' value={mobileValue} ref={mobile} label='موبایل' direction='ltr' required={true} error={' موبایل را صحیح وارد کنید.'} />
 
                 <input type="button" ref={btnSubmit} className='btnForm' value='ثبت' onClick={handleSubmit} />
 

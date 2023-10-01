@@ -23,7 +23,7 @@ export const useUserContext = () => {
 
             const data = sessionStorage.getItem('userData');
             const objData = JSON.parse(data);
-            objData && setUser(objData);
+            objData && setUser(prve => ({ ...prve, ...objData }));
 
         }
 

@@ -122,7 +122,11 @@ body {
 
 }
 
+.--pointer {
 
+    cursor: pointer;
+
+}
 
 
 /**
@@ -146,6 +150,11 @@ body {
 
 }
 
+
+.--progressBarColorBlue {
+
+    background-color: #6aaff0 !important;
+}
 
 
 /* icofont-tick-mark  */
@@ -249,6 +258,12 @@ body {
 }
 
 
+.--mySwalColor2 {
+
+    color: #0a666a;
+
+}
+
 .--mySwalColorTitleOrange {
 
     color: #e69448;
@@ -295,6 +310,76 @@ body {
     font-size: 0.9rem;
 
 }
+
+
+/* 
+    ************  useInputNumberCode css *************
+ */
+
+.--continerInputNumCode {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.--lableInpuNumCode {
+    color: #2e4a58;
+    direction: rtl;
+}
+
+.--divInputNumCode {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    direction: ltr;
+    justify-content: space-between;
+}
+
+.--inputNumCode {
+    width: 35px;
+    display: inline-flex;
+    text-align: center;
+}
+
+/*
+    ******************      ****************
+*/
+
+.--updateCodeLink {
+
+    cursor: pointer;
+
+}
+
+
+.--updateCodeLink:hover {
+    color: #4386c4;
+}
+
+
+.--textMinutes {
+
+    margin-left: 4px;
+    padding: 0 4px;
+    background-color: #ffffff;
+    color: #d3d3d3;
+    text-decoration: underline;
+
+
+}
+
+
+.--minutesForm {
+    padding: 3px 6px;
+    display: inline-flex;
+    /* flex-direction: row-reverse; */
+    width: max-content;
+    background-color: #fff;
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    direction: ltr;
+}
+
 
 
 @media screen and (min-width:500px) {

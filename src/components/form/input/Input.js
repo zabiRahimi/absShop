@@ -1,10 +1,10 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 // import { useResolvedPath } from 'react-router-dom';
 // import Swal from 'sweetalert2';
 // import withReactContent from 'sweetalert2-react-content';
 import './input.css';
 
-const Input = forwardRef(({ type, id, name, label, direction, required, error }, ref) => {
+const Input = forwardRef(({ type, id, name, label, direction, required, error, value }, ref) => {
 
     // const MySwal = withReactContent(Swal);
 
@@ -18,6 +18,8 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
     const iEye_IF = useRef(null);
     const iEyeBlocked_IF = useRef(null);
 
+    const [inputValue, setInputValue] = useState(value);
+
 
     useEffect(() => {
 
@@ -27,7 +29,12 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
 
         type === 'password' && iEye_IF.current.classList.remove('--displayNone');
 
-    }, []);
+        // value && setInputValue(value);
+
+        inputValue && labelInput_IF.current.classList.remove('hidden');
+
+
+    }, [inputValue]);
 
 
     useImperativeHandle(ref, () => ({
@@ -167,6 +174,11 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
     }
 
 
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+
     return (
 
         <div className="divInputWrapper_IF" >
@@ -185,8 +197,8 @@ const Input = forwardRef(({ type, id, name, label, direction, required, error },
 
                 <label className='lable_IF hidden' htmlFor={name} ref={labelInput_IF}> {label} </label>
 
-                <input type={type} className='input_IF' ref={input} id={name} name={name} onInput={handleInput}
-                    onFocus={handleFocus} onBlur={handleBlur} placeholder={label} />
+                <input type={type} className='input_IF' value={inputValue} ref={input} id={name} name={name} onInput={handleInput}
+                    onFocus={handleFocus} onBlur={handleBlur} onChange={handleInputChange} placeholder={label} />
 
             </div>
 

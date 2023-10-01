@@ -398,6 +398,7 @@ const SignIn = () => {
             customClass: {
 
                 popup: '--mySwalPopup',
+                htmlContainer: '--mySwalHtml',
 
 
             }
