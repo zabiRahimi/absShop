@@ -137,7 +137,7 @@ const VerticalMenu = forwardRef(({ refBtn }, ref) => {
                 </div>
                 <div className='--mySwalDivTitle'>
 
-                    <h3 className='--mySwalTitle'> آیا می‌خواهید خارج شوید؟ </h3>
+                    <h3 className='--mySwalTitle'> آیا می‌خواهید از حساب کاربری خارج شوید؟ </h3>
 
                 </div>
             </div>,

@@ -11,7 +11,7 @@ import SignUp from './components/user/SignUp';
 import './App.css';
 import 'bootstrap';
 import UserContext, { useUserContext } from './components/contexts/UserContext';
-import Profile from './components/user/Profile';
+import Dashboard from './components/user/Dashboard';
 import UserGuardRoute from './components/privateRoutes/UserGuardRoute';
 import InitialVerifyMobileGuardRoute from './components/privateRoutes/InitialVerifyMobileGuardRoute';
 import InitialVerifyMobile from './components/user/InitialVerifyMobile';
@@ -63,7 +63,7 @@ function App() {
           */}
             <Route element={<UserGuardRoute backPath='signIn' isEffect={userData.isEffect} isLogin={userData.user.login} />}>
 
-              <Route path="profile" element={<Profile />} />
+              <Route path="dashboard" element={<Dashboard />} />
 
             </Route>
 

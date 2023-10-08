@@ -370,7 +370,7 @@ const SignIn = () => {
 
                 <div className='--mySwalContainerBtn'>
 
-                    <button className='--styleLessBtn --mySwalBtn' onClick={() => (setData(), Swal.close(), navigate('/profile'))}>
+                    <button className='--styleLessBtn --mySwalBtn' onClick={() => (setData(), Swal.close(), navigate('/dashboard'))}>
 
                         <i className='icofont-user-alt-3 ' />
                         <span> حساب کاربری </span>

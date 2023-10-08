@@ -381,6 +381,102 @@ body {
 }
 
 
+/* ******************* alert ******************* */
+
+.--divAlert {
+    height: 45px;
+    margin: 0 auto 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+}
+
+
+.--alertError {
+    background-color: #f8d7da;
+    color: #842029;
+    border-color: #f5c2c7;
+}
+
+
+.--alertWarning {
+
+    background-color: #fff3cd;
+    color: #856f2c;
+    border-color: #ffecb5;
+
+}
+
+
+.--alertInfo {
+
+    background-color: #cfe2ff;
+    color: #084298;
+    border-color: #b6d4fe;
+
+}
+
+
+.--alertPrimary {
+
+    background-color: #cff4fc;
+    color: #2e7381;
+    border-color: #b6effb;
+
+}
+
+
+.--alertSuccess {
+
+    background-color: #d1e7dd;
+    color: #377055;
+    border-color: #badbcc;
+
+}
+
+
+.--alertSecondary {
+
+    background-color: #e2e3e5;
+    color: #61656a;
+    border-color: #d3d6d8;
+
+}
+
+
+
+.--alertClose {
+
+    width: 50px;
+    height: inherit;
+    text-align: center;
+    border: 1px solid;
+    border-left: none;
+    border-color: inherit;
+    color: inherit;
+
+
+}
+
+
+.--alertIClose {
+
+    font-size: 1.3rem;
+    color: inherit;
+    position: relative;
+    top: 3px;
+
+}
+
+
+.--alertP {
+
+    width: 100%;
+    margin: 0;
+    direction: rtl;
+
+}
+
 
 @media screen and (min-width:500px) {
 
