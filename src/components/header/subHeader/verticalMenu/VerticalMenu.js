@@ -219,14 +219,14 @@ const VerticalMenu = forwardRef(({ refBtn }, ref) => {
                         {
                             !user.login ?
                                 <>
-                                    <Link className='--styleLessLink linkItem_VMe' to='signIn' >
+                                    <Link className='--styleLessLink linkItem_VMe' to='signIn' onClick={handleBodyScrollShow} >
 
                                         <i className='icofont-login ' />
                                         <span>ورود</span>
 
                                     </Link>
 
-                                    <Link className='--styleLessLink linkItem_VMe' to='signUp'>
+                                    <Link className='--styleLessLink linkItem_VMe' to='signUp' onClick={handleBodyScrollShow} >
 
                                         <i className='icofont-ui-user ' />
                                         <span>ثبت نام</span>
@@ -235,10 +235,10 @@ const VerticalMenu = forwardRef(({ refBtn }, ref) => {
                                 </>
                                 :
                                 <>
-                                    <Link className='--styleLessLink linkItem_VMe profileLink_VMe' to='signIn' >
+                                    <Link className='--styleLessLink linkItem_VMe profileLink_VMe' to='dashboard' onClick={handleBodyScrollShow} >
 
                                         <i className='icofont-business-man-alt-1 ' />
-                                        <span> پیش خوان </span>
+                                        <span> حساب کاربری </span>
 
                                     </Link>
 

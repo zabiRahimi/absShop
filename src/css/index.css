@@ -95,6 +95,11 @@ body {
 }
 
 
+.--hidden {
+    visibility: hidden;
+}
+
+
 .--colorLink {
 
     color: #0c62b3;
@@ -476,6 +481,9 @@ body {
     direction: rtl;
 
 }
+
+
+
 
 
 @media screen and (min-width:500px) {

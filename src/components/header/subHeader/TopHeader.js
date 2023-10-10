@@ -188,10 +188,10 @@ const TopHeader = () => {
                 <div className="showProfileLink_THe --displayNone" ref={showProfileLink_THe}>
                     <i className="icofont-caret-up iCaretUp" />
 
-                    <Link className="--styleLessLink profileLink_THe" to='profile'>
+                    <Link className="--styleLessLink profileLink_THe" to='dashboard'>
 
                         <i className="icofont-business-man-alt-1" />
-                        <span> پیش خوان </span>
+                        <span> حساب کاربری </span>
 
                     </Link>
 

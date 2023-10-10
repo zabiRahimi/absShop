@@ -99,12 +99,12 @@ export default function Footer() {
                         </>
                         :
                         <>
-                            <Link className='--styleLessLink profileLink_Foo' to='profile' >
+                            <Link className='--styleLessLink profileLink_Foo' to='dashboard' >
 
                                 {/* linkItem_VMe profileLink_VMe */}
 
                                 <i className='icofont-ui-user  ' />
-                                <span> پیش خوان </span>
+                                <span> حساب کاربری </span>
 
                             </Link>
 
