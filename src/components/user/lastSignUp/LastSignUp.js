@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import TitleForm from "../../form/TitleForm";
 import '../../form/form.css';
-import Input from "../../form/input/Input";
+import Input from "../../form/Input";
 import ProgressBar from "../../form/progressBar/ProgressBar";
 import Name from "./Name";
 import UserName from "./UserName";
 import Email from "./Email";
-import City from "./City";
+import SelectCity from "./SelectCity";
 import Address from "./Address";
 
 const LastSignUp = () => {
@@ -86,7 +86,7 @@ const LastSignUp = () => {
                 }
 
                 {showInputs.city &&
-                    <City
+                    <SelectCity
                         setReadyStage={handleSetReadyStage}
                         setFullStage={handleSetFullStage}
                         setShowInputs={handleSetShowInputs}

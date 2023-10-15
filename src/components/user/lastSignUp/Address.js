@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import Input from "../../form/input/Input";
+import Input from "../../form/Input";
+import Textarea from "../../form/Textarea";
 
 const Address = ({ setReadyStage, setFullStage, setShowInputs }) => {
 
@@ -26,7 +27,7 @@ const Address = ({ setReadyStage, setFullStage, setShowInputs }) => {
 
             <Input type='text' id='postalCode_LSU' name='postalCode' ref={postalCodeLSU} label=' کد پستی ' direction='ltr' required={true} error={' کد پستی را صحیح وارد کنید.'} />
 
-            <textarea cols="30" rows="10"></textarea>
+            <Textarea label={'آدرس'} direction={"rtl"} required={true} error={' آدرس را به صورت صحیح وارد کنید. '} />
 
             <input type="button" className='btnForm' id="" value=' ثبت ' onClick={handleSubmit} />
 

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import useMethodsFormUser from '../hooks/useMethodsFormUser';
-import Input from '../form/input/Input';
+import Input from '../form/Input';
 import { SimpleHeader } from '../simpleHeader/SimpleHeader';
 import TitleForm from '../form/TitleForm';
 import './signIn.css';

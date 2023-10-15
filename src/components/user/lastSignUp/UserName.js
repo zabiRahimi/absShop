@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Input from "../../form/input/Input";
+import Input from "../../form/Input";
 
 const UserName = ({ setReadyStage, setFullStage, setShowInputs }) => {
 
