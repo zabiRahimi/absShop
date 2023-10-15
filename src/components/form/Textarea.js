@@ -111,7 +111,7 @@ const Textarea = ({ id, name, label, direction, required, error, value }, ref) =
             {/* onBlur={blur} onFocus={handleFocus} */}
 
 
-            <div className='errorDiv_Fo ' ref={errorDiv_Te}> {error} </div>
+            <div className='errorDiv_Fo --displayNone' ref={errorDiv_Te}> {error} </div>
         </div>
     )
 
