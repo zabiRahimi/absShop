@@ -1,13 +1,17 @@
 
 
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import './dashboard.css';
 import UserContext from '../contexts/UserContext';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { SimpleHeader } from '../simpleHeader/SimpleHeader';
 import LastSignUp from './lastSignUp/LastSignUp';
+import UseVerticalMenu from '../hooks/UseVerticalMenu';
+
 
 const Dashboard = () => {
+
+    const refVerticalMenu = useRef(null);
 
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
@@ -16,6 +20,11 @@ const Dashboard = () => {
 
         e.currentTarget.parentNode.classList.add('--displayNone');
 
+    }
+
+
+    const showVerticalMenu = () => {
+        refVerticalMenu.current.handleShowVerticalMenu();
     }
 
     return (
@@ -118,11 +127,15 @@ const Dashboard = () => {
 
                         <nav className='navHorizontal_Dash'>
 
-                            <button className='--styleLessBtn btnMenu_Dash'>
+                            <button className='--styleLessBtn btnMenu_Dash' onClick={showVerticalMenu}>
 
                                 <i className='icofont-navigation-menu ' />
 
                             </button>
+
+                            <UseVerticalMenu
+                                ref={{ refVerticalMenu }}
+                            />
 
                             <button className='--styleLessBtn btnNavHori_Dash'>
                                 خریدها

@@ -1,7 +1,8 @@
 
 
 import { useRef, useState } from 'react';
-import VerticalSubmenu from './verticalMenu/VerticalMenu';
+import VerticalMenu from './verticalMenu/VerticalMenu';
+import UseVerticalMenu from '../../hooks/UseVerticalMenu';
 import './navHeader.css';
 import SubMenuHorizontal from './subMenuHorizontal/SubMenuHorizontal';
 
@@ -12,8 +13,11 @@ const NavHeader = () => {
     const ref = useRef();
     const container_NHS = useRef(null);
     const btnMenu = useRef(null);
-    const verticalMenu = useRef(null);
-    const verticalMenu_VMe = useRef(null);
+
+    const refVerticalMenu = useRef(null);
+    // const containerVerticalMenu = useRef(null);
+    // const verticalMenu = useRef(null);
+    // const verticalMenu_VMe = useRef(null);
     const divSubMenu = useRef(null);
 
     const divItemProNHS = useRef(null);
@@ -39,55 +43,93 @@ const NavHeader = () => {
     const [modelSubMenu, setModelSubMenu] = useState();
     const [arraySubMenu, setArraySubMenu] = useState();
 
-    const showMenu = () => {
 
-        positionStatic(true);
+    /**
+     * این متد، متدهای لازم برای نمایش منوی عمودی را فرخوانی میکند
+     */
+    const showVerticalMenu = () => {
+
+        // positionStatic(true);
 
         closeAllSubMenu();
 
-        handleBodyScrollHidden();
+        refVerticalMenu.current.handleShowVerticalMenu();
 
-        handleHideBtn();
+        // handleHideBtn();
 
-        handleShowVerticalSubmenu();
+        // handleShowVerticalSubmenu();
 
     }
 
 
+
+
+
+
+    /**
+     * این متد هنگام نمایش منوی عمودی پوزیش استاتیک را به المنت اصلی 
+     * کامپوننت هیدرناوبری می‌دهد، و هنگام بستن منوی عمودی پوزیشن استاتیک
+     * را بر می دارد 
+     * @param {boolean} add 
+     */
     const positionStatic = (add) => {
+
         if (add) {
+
             container_NHS.current.classList.add('positionStatic');
 
+
         } else {
+
             container_NHS.current.classList.remove('positionStatic');
 
+
         }
-    }
-
-
-    const handleBodyScrollHidden = () => {
-
-        const body = document.getElementsByTagName('body');
-        body[0].classList.add('--scrollHidden');
 
     }
 
+    // /**
+    //  * هنگام نمایش منوی عمودی این متد اسکرول تگ بادی را غیر فعال می‌کند
+    //  */
+    // const handleBodyScrollHidden = () => {
 
-    const handleHideBtn = () => {
+    //     const body = document.getElementsByTagName('body');
 
-        btnMenu.current.classList.toggle('--displayNone');
-    }
+    //     body[0].classList.add('--scrollHidden');
+
+    // }
 
 
-    const handleShowVerticalSubmenu = () => {
+    // const handleHideBtn = () => {
 
-        verticalMenu.current.classList.remove('--displayNone');
-        setTimeout(() => {
-            verticalMenu.current.classList.add('--width100');
-            verticalMenu_VMe.current.classList.add('--width100');
-        }, 2)
+    //     btnMenu.current.classList.toggle('--displayNone');
 
-    }
+    // }
+
+    /**
+     * اقدامات لازم برای مشاهده منوی عمودی را انجام می‌دهد
+     * ابتدا المنت منوی عمودی را با اضافه کردن کلاس نمایش می‌دهد
+     * سپس برای ایجاد یک حرکت بصری توسط تابع ست‌‌تایم‌اوت با کمی تاخیر کلاس پهنای 100 درصد
+     * را به المنت اضافه می‌کند
+     * همچنین به المنت 
+     */
+    // const handleShowVerticalSubmenu = () => {
+
+    //     // verticalMenu.current.classList.remove('--displayNone');
+    //     containerVerticalMenu.current.classList.remove('--displayNone');
+
+    //     setTimeout(() => {
+
+    //         // verticalMenu.current.classList.add('--width100');
+    //         verticalMenu.current.classList.add('--width100');
+
+    //         // verticalMenu_VMe.current.classList.add('--width100');
+    //         containerVerticalMenu.current.classList.add('--width100');
+    //         console.log(containerVerticalMenu.current);
+
+    //     }, 2)
+
+    // }
 
 
     const showSupMenu = (model, array, divItem, iDown, iUp, subMenu) => {
@@ -98,7 +140,7 @@ const NavHeader = () => {
             setModelSubMenu(model);
             setArraySubMenu(array);
 
-            positionStatic(false);
+            // positionStatic(false);
             closeAllSubMenu();
 
             divItem.current.classList.add('bgColorItem_NHS')
@@ -110,12 +152,13 @@ const NavHeader = () => {
             closeAllSubMenu();
         }
 
-
-
-
     }
 
 
+    /**
+     * این متد تمام زیر منو های، منوی افقی را می‌بندد
+     * این متد زمانی کاربرد دارد که کاربر مبادرت به تماشای منوی عمودی می‌کند
+     */
     const closeAllSubMenu = () => {
 
         const divItems = Array.from(document.getElementsByClassName('nav_item_NHS'));
@@ -144,9 +187,14 @@ const NavHeader = () => {
 
 
         divSubMenu.current.classList.add('--displayNone');
+
     }
 
+
+
+
     return (
+
         <div className='container_NHS' ref={container_NHS}>
 
             <div className='cart_container_NHS'>
@@ -216,9 +264,39 @@ const NavHeader = () => {
                 </div> */}
 
                 <div className='menu_NHS'>
-                    <button onClick={showMenu} className='--styleLessBtn menubutton_NHS' ref={btnMenu}>< i className='icofont-navigation-menu --block'></i></button>
 
-                    <VerticalSubmenu ref={{ verticalMenu, verticalMenu_VMe }} refBtn={btnMenu} />
+                    <button
+
+                        onClick={showVerticalMenu}
+                        className='--styleLessBtn menubutton_NHS'
+                        ref={btnMenu}
+
+                    >
+
+                        < i className='icofont-navigation-menu --block'></i>
+
+                    </button>
+
+                    {/* <VerticalSubmenu
+
+                        refBtn={btnMenu}
+                        ref={{ verticalMenu, verticalMenu_VMe }}
+
+                    /> */}
+
+                    {/* <VerticalMenu
+
+                        refBtn={btnMenu}
+                        ref={{ verticalMenu, verticalMenu_VMe }}
+
+                    /> */}
+
+                    <UseVerticalMenu
+                        Menu={VerticalMenu}
+                        hasBtn={true}
+                        ref={{ refVerticalMenu }}
+                    />
+
                 </div>
             </nav>
 
