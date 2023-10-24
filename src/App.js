@@ -11,12 +11,22 @@ import SignUp from './components/user/SignUp';
 import './App.css';
 import 'bootstrap';
 import UserContext, { useUserContext } from './components/contexts/UserContext';
-import Dashboard from './components/user/Dashboard';
+import Dashboard from './components/user/dashboard/Dashboard';
 import UserGuardRoute from './components/privateRoutes/UserGuardRoute';
 import InitialVerifyMobileGuardRoute from './components/privateRoutes/InitialVerifyMobileGuardRoute';
 import InitialVerifyMobile from './components/user/InitialVerifyMobile';
 import InitialVerifyMobileContext, { useInitialVerifyMobileContext } from './components/contexts/InitialVerifyMobileContext';
 import { useEffect } from 'react';
+import OrderInProcess from './components/user/dashboard/OrderInProcess';
+import PurchasesReceived from './components/user/dashboard/PurchasesReceived';
+import ReturnPurchases from './components/user/dashboard/ReturnPurchases';
+import MyComments from './components/user/dashboard/MyComments';
+import ShopMessages from './components/user/dashboard/ShopMessages';
+import ShopWarnings from './components/user/dashboard/ShopWarnings';
+import UsersMessages from './components/user/dashboard/UsersMessages';
+import MyVisits from './components/user/dashboard/MyVisits';
+import MyFavorites from './components/user/dashboard/MyFavorites';
+import MyScores from './components/user/dashboard/MyScores';
 
 
 function App() {
@@ -63,7 +73,23 @@ function App() {
           */}
             <Route element={<UserGuardRoute backPath='signIn' isEffect={userData.isEffect} isLogin={userData.user.login} />}>
 
-              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="dashboard" element={<Dashboard />}>
+
+                <Route path="orderInProcess" element={<OrderInProcess />} />
+                <Route path="purchasesReceived" element={<PurchasesReceived />} />
+                <Route path="returnPurchases" element={<ReturnPurchases />} />
+                <Route path="myComments" element={<MyComments />} />
+                <Route path="shopMessages" element={<ShopMessages />} />
+                <Route path="shopWarnings" element={<ShopWarnings />} />
+                <Route path="usersMessages" element={<UsersMessages />} />
+                <Route path="myVisits" element={<MyVisits />} />
+                <Route path="myFavorites" element={<MyFavorites />} />
+                <Route path="MyScores" element={<MyScores />} />
+                {/* <Route path="" element={< />} /> */}
+                {/* <Route path="" element={< />} /> */}
+
+              </Route>
+              {/* <Route path="dashboard/orderInProcess" element={<OrderInProcess />} /> */}
 
             </Route>
 

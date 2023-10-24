@@ -167,11 +167,15 @@
 }
 
 
-.containerMain_Dash {}
+.containerMain_Dash {
+
+    display: flex;
+}
 
 
 .main_Dash {
 
+    width: 100%;
     background-color: #ebecf0;
 
 }
@@ -214,6 +218,16 @@
     color: #98999e;
     border-radius: 4px;
     display: flex;
+
+
+}
+
+
+.aside_dash {
+
+    width: max-content;
+    min-width: 250px;
+    display: none;
 
 
 }
@@ -326,4 +340,26 @@
 
     }
 
+    .btnMenu_Dash {
+
+        display: none;
+
+    }
+
+    .aside_dash {
+
+        display: block;
+
+    }
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .aside_dash {
+
+        min-width: 320px;
+
+    }
 }

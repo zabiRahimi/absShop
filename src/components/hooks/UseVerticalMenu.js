@@ -163,7 +163,11 @@ const UseVerticalMenu = forwardRef(({ Menu, hasBtn = false }, ref) => {
                     </div>
                 }
 
-                <Menu handleBodyScrollShow={handleBodyScrollShow} handleCloseVerticalMenu={handleCloseVerticalMenu} />
+                <Menu
+
+                    handleBodyScrollShow={handleBodyScrollShow} handleCloseVerticalMenu={handleCloseVerticalMenu}
+
+                />
 
             </div>
 

@@ -1,31 +1,83 @@
 
 
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import './dashboard.css';
-import UserContext from '../contexts/UserContext';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { SimpleHeader } from '../simpleHeader/SimpleHeader';
-import LastSignUp from './lastSignUp/LastSignUp';
-import UseVerticalMenu from '../hooks/UseVerticalMenu';
+import UserContext from '../../contexts/UserContext';
+import { Routes, Route, Link, Navigate, useNavigate, Outlet, useLocation } from 'react-router-dom';
+import { SimpleHeader } from '../../simpleHeader/SimpleHeader';
+import LastSignUp from '../lastSignUp/LastSignUp';
+import UseVerticalMenu from '../../hooks/UseVerticalMenu';
+import VerticalMenuDashboard from './VerticalMenuDashboard';
+import OrderInProcess from './OrderInProcess';
 
 
 const Dashboard = () => {
 
+    /**
+     * زمانی که یکی از روتهای فرزند داشبورد صدا زده می‌شود برای اینکه 
+     * دقیقا اسکرول کنیم به اطلاعت جدید، نیاز داریم که تشخیص دهیم
+     * که آیا داشبورد صدا زده شده یا یکی از روتهای فرزند آن تا عملیات 
+     * اسکرول را انجام دهیم، برای دریافت آدرس از این دستور استفاده می کنیم
+     * که در ادامه برنامه از آن استفاده می شود
+     */
+    const { pathname } = useLocation();
+
+
+    const main = useRef(null);
     const refVerticalMenu = useRef(null);
+
 
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
+    /**
+     * از این یوز برای اسکرول کردن به اطلاعات جدید هنگامی که کاربر یکی 
+     * از روتهای فرزند داشبورد را صدا می زند استفاده میکنیم
+     * این یوز تنها زمانی که آدرس تغییر می‌کند صدا زده می‌شود
+     */
+    useEffect(() => {
+
+        /**
+         * فقط زمانی دستورات زیر اعمال می‌شود که یکی از روتهای فرزند
+         * داشبورد صدا زده شود نه آدرس اصلی داشبورد
+         * روتها در فایل App.js قرار دارد
+         * اطلاعت کامپوننتهای فرزند داشبورد در تگ ماین نمایش داده می‌شود
+         * بخاطر همین مقدار عمودی این المنت را می‌گیریم و به دستور 
+         * اسکرول می‌دهیم
+         */
+        if (pathname != '/dashboard') {
+
+            const { top } = main.current.getBoundingClientRect();
+
+            window.scrollTo(0, top - 10);
+
+        }
+
+    }, [pathname]);
+
+    /**
+     * این متد وظیفه بستن اعلانهایی که سیستم برای کاربر می‌فرستد
+     * و در بالای صفحه نمایش داده می‌شود را دارد، البته زمانی که کاربر 
+     * قصد بستن آنها را دارد
+     * @param {} e 
+     */
     const closeAlert = (e) => {
 
         e.currentTarget.parentNode.classList.add('--displayNone');
 
     }
 
-
+    /**
+     * نمایش منوی عمودی، منو عمودی و دکمه آن تنها در صفحات با عرض
+     * کمتر از 768 قابل مشاهده است
+     */
     const showVerticalMenu = () => {
+
         refVerticalMenu.current.handleShowVerticalMenu();
+
     }
+
+
 
     return (
         <div>
@@ -43,7 +95,7 @@ const Dashboard = () => {
                         </button>
 
                         <div className='divOverAvatar_Dash'></div>
-                        <img className='avatar_Dash' src={require(`../../assets/avatar/images.png`)} alt='avatar' />
+                        <img className='avatar_Dash' src={require(`../../../assets/avatar/images.png`)} alt='avatar' />
                     </div>
 
                     <div className='divUserName_Dash'>
@@ -123,7 +175,7 @@ const Dashboard = () => {
 
                 <div className='containerMain_Dash'>
 
-                    <main className='main_Dash'>
+                    <main className='main_Dash' ref={main}>
 
                         <nav className='navHorizontal_Dash'>
 
@@ -134,6 +186,8 @@ const Dashboard = () => {
                             </button>
 
                             <UseVerticalMenu
+                                Menu={VerticalMenuDashboard}
+                                hasBtn={true}
                                 ref={{ refVerticalMenu }}
                             />
 
@@ -149,13 +203,19 @@ const Dashboard = () => {
 
                         </nav>
 
+                        <Outlet />
+
                         <LastSignUp />
 
                     </main>
 
                     <aside className='aside_dash'>
 
-                        <nav className='navVertical'></nav>
+                        <nav className='navVertical'>
+
+                            <VerticalMenuDashboard />
+
+                        </nav>
 
                     </aside>
 
